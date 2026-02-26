@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bcg-forest: #004526;
+  --color-bcg-neon: #00f04b;
+  --color-bcg-gray: #f5f5f5;
+  --color-bcg-dark: #1a1a1a;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --animate-bounce-slow: bounce-slow 3s ease-in-out infinite;
+  --animate-fade-in-up: fade-in-up 0.6s ease-out forwards;
+  --animate-fade-in: fade-in 0.5s ease-out forwards;
+  --animate-scale-in: scale-in 0.4s ease-out forwards;
+
+  @keyframes bounce-slow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  @keyframes fade-in-up {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes scale-in {
+    from { opacity: 0; transform: scale(0.97); }
+    to { opacity: 1; transform: scale(1); }
+  }
+}
+
+@layer base {
+  body {
+    @apply font-sans text-bcg-dark bg-white antialiased;
+  }
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-bcg-forest;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+.markdown-body {
+  @apply max-w-none;
+}
