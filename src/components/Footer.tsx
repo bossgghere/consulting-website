@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Linkedin, Facebook, Twitter, Instagram, Youtube, Music2, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 export const Footer = () => {
   return (
@@ -55,16 +55,6 @@ export const Footer = () => {
             <a href="#" className="hover:text-bcg-forest transition-colors">SITEMAP</a>
             <a href="#" className="hover:text-bcg-forest transition-colors">RESPONSIBLE DISCLOSURE</a>
             <a href="#" className="hover:text-bcg-forest transition-colors">COOKIE PREFERENCES</a>
-          </div>
-
-          <div className="flex items-center gap-6 text-gray-600">
-            <span className="text-[10px] font-bold uppercase tracking-widest mr-2">FOLLOW US</span>
-            <Linkedin className="w-5 h-5 cursor-pointer hover:text-bcg-forest transition-colors" />
-            <Facebook className="w-5 h-5 cursor-pointer hover:text-bcg-forest transition-colors" />
-            <Twitter className="w-5 h-5 cursor-pointer hover:text-bcg-forest transition-colors" />
-            <Instagram className="w-5 h-5 cursor-pointer hover:text-bcg-forest transition-colors" />
-            <Youtube className="w-5 h-5 cursor-pointer hover:text-bcg-forest transition-colors" />
-            <Music2 className="w-5 h-5 cursor-pointer hover:text-bcg-forest transition-colors" />
           </div>
         </div>
 

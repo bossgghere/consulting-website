@@ -85,7 +85,7 @@ const ContactPage = () => {
             <div className="space-y-16">
               {[
                 { icon: <Mail />, label: "Email Us", value: "contact@nexora.com", sub: "Typically responds within 24 hours." },
-                { icon: <Phone />, label: "Call Us", value: "+44 (0) 20 7000 0000", sub: "Mon-Fri, 9am - 6pm GMT" },
+                { icon: <Phone />, label: "Call Us", value: "(346) 278-6004", sub: "Mon-Fri, 9am - 6pm GMT" },
                 { icon: <MapPin />, label: "Visit Us", value: "London Office", sub: "20 Fenchurch St, London EC3M 3BY, UK" }
               ].map((item, i) => (
                 <div key={i} className="flex gap-8 group">
