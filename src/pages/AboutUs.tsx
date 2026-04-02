@@ -11,10 +11,10 @@ const AboutUs = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="lg:col-span-7 z-10"
+            className="lg:col-span-7 z-10 min-w-0"
           >
             <span className="text-xs font-black uppercase tracking-[0.4em] text-bcg-forest mb-6 sm:mb-8 block">WHO WE ARE</span>
-            <h1 className="text-5xl sm:text-8xl md:text-[12rem] font-light text-bcg-dark mb-8 sm:mb-12 tracking-tighter leading-[0.8]">
+            <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl xl:text-[10rem] font-light text-bcg-dark mb-8 sm:mb-12 tracking-tighter leading-[0.85] sm:leading-[0.8]">
               About <br /> <span className="italic font-serif">Us</span>
             </h1>
             <p className="text-xl sm:text-2xl md:text-3xl text-gray-600 leading-relaxed font-light max-w-xl">
@@ -36,7 +36,7 @@ const AboutUs = () => {
                 referrerPolicy="no-referrer"
               />
             </div>
-            <div className="absolute -bottom-8 sm:-bottom-12 -left-8 sm:-left-12 bg-bcg-neon p-8 sm:p-12 rounded-full shadow-2xl">
+            <div className="absolute bottom-3 left-3 sm:-bottom-8 sm:-left-8 md:-bottom-12 md:-left-12 bg-bcg-neon p-6 sm:p-8 md:p-12 rounded-full shadow-2xl max-w-[min(100%-1.5rem,280px)] sm:max-w-none">
               <p className="text-bcg-dark font-black text-2xl sm:text-4xl tracking-tighter">Global</p>
               <p className="text-bcg-dark/60 text-[10px] uppercase tracking-widest font-bold">Presence</p>
             </div>

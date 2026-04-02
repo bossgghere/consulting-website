@@ -7,6 +7,7 @@
   --color-bcg-dark: #1a1a1a;
 
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-nav: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
 
   --animate-bounce-slow: bounce-slow 3s ease-in-out infinite;
   --animate-fade-in-up: fade-in-up 0.6s ease-out forwards;
@@ -31,7 +32,20 @@
   }
 }
 
+@layer components {
+  /* Home page body copy — one consistent rhythm (light vs dark surfaces) */
+  .home-prose {
+    @apply text-base sm:text-lg font-light leading-relaxed text-gray-600;
+  }
+  .home-prose-invert {
+    @apply text-base sm:text-lg font-light leading-relaxed text-white/70;
+  }
+}
+
 @layer base {
+  html {
+    overflow-x: clip;
+  }
   body {
     @apply font-sans text-bcg-dark bg-white antialiased;
   }

@@ -13,7 +13,7 @@ const ContactPage = () => {
           className="max-w-4xl mb-16 sm:mb-24"
         >
           <span className="text-xs font-black uppercase tracking-[0.4em] text-bcg-forest mb-6 sm:mb-8 block">GET IN TOUCH</span>
-          <h1 className="text-5xl sm:text-8xl md:text-[10rem] font-light text-bcg-dark mb-8 sm:mb-12 tracking-tighter leading-[0.8]">
+          <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-light text-bcg-dark mb-8 sm:mb-12 tracking-tighter leading-[0.85] sm:leading-[0.8]">
             Contact <br /> <span className="italic font-serif">Us</span>
           </h1>
           <p className="text-lg sm:text-2xl text-gray-600 font-light leading-relaxed max-w-2xl">
@@ -28,7 +28,7 @@ const ContactPage = () => {
             initial={{ opacity: 0, x: -24 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:col-span-7 bg-white p-8 sm:p-12 md:p-16 rounded-2xl sm:rounded-[3rem] shadow-2xl border border-gray-100"
+            className="lg:col-span-7 bg-white p-5 sm:p-8 md:p-12 lg:p-16 rounded-2xl sm:rounded-[3rem] shadow-2xl border border-gray-100 min-w-0"
           >
             <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
               <motion.div
@@ -80,22 +80,22 @@ const ContactPage = () => {
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="lg:col-span-5 flex flex-col justify-between"
+            className="lg:col-span-5 flex flex-col justify-between min-w-0"
           >
-            <div className="space-y-16">
+            <div className="space-y-10 sm:space-y-16">
               {[
                 { icon: <Mail />, label: "Email Us", value: "contact@nexora.com", sub: "Typically responds within 24 hours." },
                 { icon: <Phone />, label: "Call Us", value: "(346) 278-6004", sub: "Mon-Fri, 9am - 6pm GMT" },
                 { icon: <MapPin />, label: "Visit Us", value: "London Office", sub: "20 Fenchurch St, London EC3M 3BY, UK" }
               ].map((item, i) => (
-                <div key={i} className="flex gap-8 group">
-                  <div className="w-16 h-16 bg-bcg-forest text-bcg-neon rounded-3xl flex items-center justify-center shrink-0 group-hover:rotate-6 transition-transform shadow-lg">
-                    {React.cloneElement(item.icon as React.ReactElement, { className: "w-6 h-6" })}
+                <div key={i} className="flex gap-4 sm:gap-8 group min-w-0">
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 bg-bcg-forest text-bcg-neon rounded-2xl sm:rounded-3xl flex items-center justify-center shrink-0 group-hover:rotate-6 transition-transform shadow-lg">
+                    {React.cloneElement(item.icon as React.ReactElement, { className: "w-5 h-5 sm:w-6 sm:h-6" })}
                   </div>
-                  <div>
+                  <div className="min-w-0 flex-1">
                     <h3 className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400 mb-2">{item.label}</h3>
-                    <p className="text-2xl text-bcg-dark font-bold tracking-tight mb-1">{item.value}</p>
-                    <p className="text-gray-500 font-light">{item.sub}</p>
+                    <p className="text-xl sm:text-2xl text-bcg-dark font-bold tracking-tight mb-1 break-words">{item.value}</p>
+                    <p className="text-gray-500 font-light text-sm sm:text-base break-words">{item.sub}</p>
                   </div>
                 </div>
               ))}
@@ -111,7 +111,7 @@ const ContactPage = () => {
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-bcg-dark/60 to-transparent"></div>
-                <div className="absolute bottom-8 left-8">
+                <div className="absolute bottom-4 left-4 sm:bottom-8 sm:left-8 pr-4">
                   <p className="text-white font-black text-xs uppercase tracking-widest">Headquarters</p>
                   <p className="text-white/80 text-sm font-light">London, United Kingdom</p>
                 </div>

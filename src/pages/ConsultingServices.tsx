@@ -1,35 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import {
-  Code2,
-  CloudRain,
-  Settings,
-  Clock,
-  Database,
-  ShieldCheck,
-  TestTube2,
-  PieChart,
-  ArrowRight,
-  Search,
-  Map,
-  Rocket,
-} from 'lucide-react';
 import { CONSULTING_SERVICES, PROCESS_STEPS } from '../data/consultingServices';
 import type { ServiceSlug } from '../data/consultingServices';
-
-const ICON_MAP: Record<string, React.ReactNode> = {
-  'application-development': <Code2 className="w-6 h-6" />,
-  'cloud-migration': <CloudRain className="w-6 h-6" />,
-  automation: <Settings className="w-6 h-6" />,
-  'round-the-clock-support': <Clock className="w-6 h-6" />,
-  infrastructure: <Database className="w-6 h-6" />,
-  'it-security': <ShieldCheck className="w-6 h-6" />,
-  'software-testing': <TestTube2 className="w-6 h-6" />,
-  'bi-development': <PieChart className="w-6 h-6" />,
-  'process-discovery': <Search className="w-6 h-6" />,
-  'process-strategy': <Map className="w-6 h-6" />,
-  'process-execution': <Rocket className="w-6 h-6" />,
-};
 
 interface ConsultingServicesProps {
   onNavigateToService?: (slug: ServiceSlug) => void;
@@ -45,11 +17,12 @@ const ConsultingServices = ({ onNavigateToService }: ConsultingServicesProps) =>
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
+            className="min-w-0"
           >
             <span className="text-xs font-black uppercase tracking-[0.3em] text-bcg-forest mb-4 sm:mb-6 block">
               STRATEGY & IMPACT
             </span>
-            <h1 className="text-5xl sm:text-7xl md:text-9xl font-light text-bcg-dark mb-6 sm:mb-8 tracking-tighter leading-[0.9]">
+            <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-light text-bcg-dark mb-6 sm:mb-8 tracking-tighter leading-[0.9]">
               Services <br /> <span className="italic font-serif">We Offer</span>
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl text-gray-600 leading-relaxed font-light max-w-lg">
@@ -135,9 +108,6 @@ const ConsultingServices = ({ onNavigateToService }: ConsultingServicesProps) =>
                         className="pointer-events-none absolute inset-0 bg-gradient-to-t from-bcg-dark/45 via-bcg-dark/5 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-transparent lg:to-bcg-dark/10"
                         aria-hidden
                       />
-                      <div className="absolute left-4 top-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-white/95 text-bcg-forest shadow-md backdrop-blur-sm sm:left-6 sm:top-6 sm:h-14 sm:w-14 [&_svg]:h-6 [&_svg]:w-6 sm:[&_svg]:h-7 sm:[&_svg]:w-7">
-                        {ICON_MAP[item.slug]}
-                      </div>
                     </div>
 
                     {/* Copy */}
@@ -164,10 +134,9 @@ const ConsultingServices = ({ onNavigateToService }: ConsultingServicesProps) =>
                       <button
                         type="button"
                         onClick={() => onNavigateToService?.(item.slug)}
-                        className="inline-flex items-center gap-3 self-start rounded-full border border-bcg-forest/20 bg-bcg-forest px-5 py-3 text-xs font-black uppercase tracking-[0.2em] text-white transition-all hover:bg-bcg-dark hover:border-bcg-dark hover:shadow-lg active:scale-[0.98]"
+                        className="inline-flex items-center self-start rounded-full border border-bcg-forest/20 bg-bcg-forest px-5 py-3 text-xs font-black uppercase tracking-[0.2em] text-white transition-all hover:bg-bcg-dark hover:border-bcg-dark hover:shadow-lg active:scale-[0.98]"
                       >
                         View capability
-                        <ArrowRight className="h-4 w-4" aria-hidden />
                       </button>
                     </div>
                   </div>
@@ -179,15 +148,15 @@ const ConsultingServices = ({ onNavigateToService }: ConsultingServicesProps) =>
       </section>
 
       {/* How We Work Section */}
-      <section className="py-20 sm:py-32 bg-bcg-dark text-white overflow-hidden relative">
+      <section className="py-16 sm:py-24 lg:py-32 bg-bcg-dark text-white overflow-hidden relative">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-bcg-forest/20 skew-x-12 translate-x-1/2 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 sm:gap-24 items-center">
-            <div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div className="min-w-0">
               <span className="text-xs font-black uppercase tracking-[0.3em] text-bcg-neon mb-4 sm:mb-6 block">
                 OUR PROCESS
               </span>
-              <h2 className="text-4xl sm:text-5xl md:text-7xl font-light mb-8 sm:mb-12 tracking-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light mb-8 sm:mb-12 tracking-tight">
                 How We <span className="italic font-serif">Deliver</span>
               </h2>
               <div className="space-y-8 sm:space-y-12">
@@ -211,17 +180,16 @@ const ConsultingServices = ({ onNavigateToService }: ConsultingServicesProps) =>
                       <button
                         type="button"
                         onClick={() => onNavigateToService?.(item.slug)}
-                        className="flex items-center gap-2 text-bcg-neon font-bold uppercase tracking-widest text-[11px] group/btn w-fit"
+                        className="text-bcg-neon font-bold uppercase tracking-widest text-[11px] w-fit underline-offset-4 hover:underline"
                       >
-                        <span>Read more</span>
-                        <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-2 transition-transform" />
+                        Read more
                       </button>
                     </div>
                   </motion.div>
                 ))}
               </div>
             </div>
-            <div className="relative">
+            <div className="relative min-w-0">
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -235,7 +203,7 @@ const ConsultingServices = ({ onNavigateToService }: ConsultingServicesProps) =>
                   referrerPolicy="no-referrer"
                 />
               </motion.div>
-              <div className="absolute -bottom-8 sm:-bottom-12 -right-8 sm:-right-12 w-36 h-36 sm:w-48 sm:h-48 bg-bcg-neon rounded-full flex items-center justify-center text-bcg-dark p-6 sm:p-8 text-center">
+              <div className="absolute bottom-3 right-3 sm:-bottom-8 sm:-right-8 md:-bottom-12 md:-right-12 w-28 h-28 sm:w-36 sm:h-36 md:w-48 md:h-48 bg-bcg-neon rounded-full flex items-center justify-center text-bcg-dark p-4 sm:p-6 md:p-8 text-center">
                 <p className="font-black text-[10px] sm:text-xs uppercase tracking-widest">
                   Result Oriented
                 </p>

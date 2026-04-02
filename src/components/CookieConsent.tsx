@@ -42,7 +42,7 @@ export const CookieConsent = () => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.5, duration: 0.3 }}
         onClick={() => setPanelOpen((o) => !o)}
-        className="fixed bottom-6 right-6 z-[100] w-14 h-14 rounded-full bg-bcg-forest text-bcg-neon shadow-lg border-2 border-bcg-neon/30 flex items-center justify-center hover:scale-110 hover:shadow-xl focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-bcg-forest transition-all duration-200"
+        className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-[100] w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-bcg-forest text-bcg-neon shadow-lg border-2 border-bcg-neon/30 flex items-center justify-center hover:scale-110 hover:shadow-xl focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-bcg-forest transition-all duration-200"
       >
         <Cookie className="w-7 h-7" />
         {status === 'pending' && (
@@ -67,7 +67,7 @@ export const CookieConsent = () => {
               animate={{ opacity: 1, x: 0, y: 0 }}
               exit={{ opacity: 0, x: 24 }}
               transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-              className="fixed bottom-24 right-6 z-[100] w-full max-w-md rounded-2xl bg-bcg-forest text-white shadow-2xl border border-bcg-neon/20 overflow-hidden"
+              className="fixed bottom-20 left-4 right-4 z-[100] w-auto max-w-md mx-auto sm:left-auto sm:right-6 sm:mx-0 sm:bottom-24 rounded-2xl bg-bcg-forest text-white shadow-2xl border border-bcg-neon/20 overflow-hidden"
             >
               <div className="p-6 sm:p-8">
                 <div className="flex items-start justify-between gap-4 mb-4">

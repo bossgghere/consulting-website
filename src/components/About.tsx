@@ -9,18 +9,27 @@ interface AboutProps {
 
 export const About = ({ onNavigate }: AboutProps) => {
   return (
-    <section className="py-12 sm:py-20 bg-bcg-forest">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative py-12 sm:py-20 bg-bcg-forest overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,240,75,0.12),transparent)] pointer-events-none" aria-hidden />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
+            className="space-y-4 sm:space-y-6"
           >
-            <h2 className="text-4xl sm:text-5xl font-light text-white mb-6 sm:mb-8">About Nexora</h2>
-            <p className="text-base sm:text-lg text-white/80 leading-relaxed mb-8 sm:mb-10 max-w-xl">
-              As a top consulting firm, Nexora helps clients with total transformation—driving complex change, enabling organizations to grow, and driving bottom-line impact.
+            <span className="text-[10px] sm:text-xs font-black uppercase tracking-[0.3em] text-bcg-neon block">
+              About Nexora
+            </span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.25rem] font-light text-white leading-snug sm:leading-tight tracking-tight">
+              As a top consulting firm, we help clients with{' '}
+              <span className="text-bcg-neon italic font-serif">total transformation</span>
+              —driving complex change, enabling organizations to grow, and delivering bottom-line impact.
+            </h2>
+            <p className="home-prose-invert max-w-lg">
+              We are in a league of our own, backed by our global entities—strategy, delivery, and outcomes aligned with how you operate.
             </p>
             <button
               onClick={() => onNavigate('about')}

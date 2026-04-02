@@ -1,8 +1,13 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
+import type { PageId } from '../App';
 
-export const Footer = () => {
+interface FooterProps {
+  onNavigate: (page: PageId) => void;
+}
+
+export const Footer = ({ onNavigate }: FooterProps) => {
   return (
     <footer className="bg-bcg-gray pt-16 sm:pt-24 pb-8 sm:pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -33,10 +38,15 @@ export const Footer = () => {
 
           <div className="lg:col-span-4">
             <h3 className="text-xl sm:text-2xl font-light text-bcg-dark mb-3 sm:mb-4">How can we assist you?</h3>
-            <p className="text-sm text-gray-600 mb-6 sm:mb-8 leading-relaxed">
-              We value the opportunity to connect with you. Please submit your inquiries and feedback, and our experienced professionals are ready to assist you.
+            <p className="text-base sm:text-lg font-light leading-relaxed text-gray-600 mb-6 sm:mb-8 max-w-xl">
+              We value the opportunity to connect with you. Please submit your inquiries and feedback, and our
+              experienced professionals are ready to assist you.
             </p>
-            <button className="flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-bcg-neon text-bcg-dark font-bold uppercase tracking-widest text-xs sm:text-sm rounded-sm hover:brightness-110 transition-all group">
+            <button
+              type="button"
+              onClick={() => onNavigate('contact')}
+              className="flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-bcg-neon text-bcg-dark font-bold uppercase tracking-widest text-xs sm:text-sm rounded-sm hover:brightness-110 transition-all group"
+            >
               CONTACT US
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
@@ -48,7 +58,7 @@ export const Footer = () => {
             <span className="text-2xl sm:text-3xl font-bold tracking-tighter text-bcg-dark">NEXORA</span>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-4 sm:gap-8 text-[10px] font-bold uppercase tracking-widest text-gray-600">
+          <div className="flex flex-wrap justify-center gap-x-4 gap-y-3 sm:gap-8 max-w-full text-[10px] font-bold uppercase tracking-widest text-gray-600 px-1">
             <a href="#" className="hover:text-bcg-forest transition-colors">PRIVACY POLICY</a>
             <a href="#" className="hover:text-bcg-forest transition-colors">TERMS OF USE</a>
             <a href="#" className="hover:text-bcg-forest transition-colors">SITEMAP</a>
@@ -63,7 +73,7 @@ export const Footer = () => {
                 Nexora is an Equal Opportunity Employer. All qualified applicants will receive consideration for employment without regard to race, color, age, religion, sex, sexual orientation, gender identity / expression, national origin, protected veteran status, or any other characteristic protected under federal, state, or local laws.
               </p>
            </div>
-           <div className="text-[10px] text-gray-500 whitespace-nowrap shrink-0">
+           <div className="text-[10px] text-gray-500 shrink-0 text-right lg:text-left">
               © 2026 Nexora
            </div>
         </div>

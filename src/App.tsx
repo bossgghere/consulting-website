@@ -41,13 +41,13 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col min-w-0 overflow-x-clip">
       <Navbar
         onNavigate={handleNavigate}
         currentPage={currentPage}
         serviceSlug={serviceSlug}
       />
-      <main className="flex-grow">
+      <main className="flex-grow min-w-0">
         {currentPage === 'home' ? (
           <>
             <Hero />
@@ -55,7 +55,7 @@ export default function App() {
             <About onNavigate={handleNavigate} />
             <PressRelease onNavigate={handleNavigate} />
             <Careers onNavigate={handleNavigate} />
-            <CTA />
+            <CTA onNavigate={handleNavigate} />
           </>
         ) : currentPage === 'about' ? (
           <AboutUsPage />
@@ -74,7 +74,7 @@ export default function App() {
           <TechServicesPage />
         )}
       </main>
-      <Footer />
+      <Footer onNavigate={handleNavigate} />
       <CookieConsent />
     </div>
   );

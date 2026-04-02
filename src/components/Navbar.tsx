@@ -32,7 +32,7 @@ export const Navbar = ({ onNavigate, currentPage, serviceSlug }: NavbarProps) =>
           initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          className="flex flex-wrap justify-start items-center gap-2 sm:gap-4"
+          className="flex flex-wrap justify-start items-center gap-2 sm:gap-4 min-w-0 w-full"
         >
           {/* Logo - always goes to home */}
           <motion.div
@@ -47,28 +47,32 @@ export const Navbar = ({ onNavigate, currentPage, serviceSlug }: NavbarProps) =>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center justify-start bg-white border border-gray-200 rounded-xl sm:rounded-2xl px-6 sm:px-8 py-2 sm:py-3 shadow-sm">
-            <div className="flex flex-wrap items-center gap-3 sm:gap-6 text-[10px] sm:text-[11px] font-bold uppercase tracking-widest">
+            <div className="font-nav flex flex-wrap items-center gap-3 sm:gap-6 text-sm font-semibold uppercase tracking-widest text-bcg-dark">
               <button
+                type="button"
                 onClick={() => onNavigate('home')}
-                className={`${currentPage === 'home' ? 'bg-[#D1FAE5] text-bcg-forest' : 'text-gray-600'} px-3 sm:px-4 py-2 rounded-lg transition-all duration-200 hover:opacity-90 active:scale-[0.98]`}
+                className={`${currentPage === 'home' ? 'bg-[#D1FAE5] text-bcg-forest' : 'text-bcg-dark hover:text-bcg-forest'} px-3 sm:px-4 py-2 rounded-lg transition-colors duration-200 active:scale-[0.98]`}
               >
                 Home
               </button>
               <button
+                type="button"
                 onClick={() => onNavigate('consulting')}
-                className={`${isConsultingActive ? 'bg-[#D1FAE5] text-bcg-forest' : 'text-gray-600'} px-3 sm:px-4 py-2 rounded-lg transition-all duration-200 hover:opacity-90 active:scale-[0.98]`}
+                className={`${isConsultingActive ? 'bg-[#D1FAE5] text-bcg-forest' : 'text-bcg-dark hover:text-bcg-forest'} px-3 sm:px-4 py-2 rounded-lg transition-colors duration-200 active:scale-[0.98]`}
               >
                 Consulting
               </button>
               <button
+                type="button"
                 onClick={() => onNavigate('tech')}
-                className={`${currentPage === 'tech' ? 'bg-[#D1FAE5] text-bcg-forest' : 'text-gray-600'} px-3 sm:px-4 py-2 rounded-lg transition-all duration-200 hover:opacity-90 active:scale-[0.98]`}
+                className={`${currentPage === 'tech' ? 'bg-[#D1FAE5] text-bcg-forest' : 'text-bcg-dark hover:text-bcg-forest'} px-3 sm:px-4 py-2 rounded-lg transition-colors duration-200 active:scale-[0.98]`}
               >
                 Tech Services
               </button>
               <button
+                type="button"
                 onClick={() => onNavigate('about')}
-                className={`${currentPage === 'about' ? 'bg-[#D1FAE5] text-bcg-forest' : 'text-gray-600'} px-3 sm:px-4 py-2 rounded-lg transition-all duration-200 hover:opacity-90 active:scale-[0.98]`}
+                className={`${currentPage === 'about' ? 'bg-[#D1FAE5] text-bcg-forest' : 'text-bcg-dark hover:text-bcg-forest'} px-3 sm:px-4 py-2 rounded-lg transition-colors duration-200 active:scale-[0.98]`}
               >
                 About Us
               </button>
@@ -116,10 +120,10 @@ export const Navbar = ({ onNavigate, currentPage, serviceSlug }: NavbarProps) =>
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: i * 0.04 }}
                     onClick={() => handleNav(page)}
-                    className={`text-left px-4 py-3 rounded-lg text-sm font-bold uppercase tracking-widest transition-colors active:scale-[0.98] ${
+                    className={`font-nav text-left px-4 py-3 rounded-lg text-sm font-semibold uppercase tracking-widest transition-colors active:scale-[0.98] ${
                       (page === 'consulting' ? isConsultingActive : currentPage === page)
                         ? 'bg-[#D1FAE5] text-bcg-forest'
-                        : 'text-gray-600 hover:bg-gray-100'
+                        : 'text-bcg-dark hover:bg-gray-100 hover:text-bcg-forest'
                     }`}
                   >
                     {label}

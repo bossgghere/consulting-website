@@ -7,7 +7,7 @@
     </linearGradient>
   </defs>
   <rect width="1200" height="630" fill="url(#bg)"/>
-  <text x="120" y="280" font-family="system-ui, sans-serif" font-size="72" font-weight="700" fill="#fff" letter-spacing="-0.02em">KABIR TECH</text>
+  <text x="120" y="280" font-family="system-ui, sans-serif" font-size="72" font-weight="700" fill="#fff" letter-spacing="-0.02em">NEXORA</text>
   <text x="120" y="360" font-family="system-ui, sans-serif" font-size="28" font-weight="400" fill="rgba(255,255,255,0.85)">Consulting &amp; Technology Solutions</text>
   <rect x="120" y="420" width="200" height="4" fill="#00f04b" rx="2"/>
 </svg>
