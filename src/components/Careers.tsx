@@ -1,6 +1,8 @@
 import React from 'react';
+import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
 import type { PageId } from '../App';
+import { staggerContainer, staggerItem } from '../motionPresets';
 
 interface CareersProps {
   onNavigate: (page: PageId) => void;
@@ -20,24 +22,46 @@ export const Careers = ({ onNavigate }: CareersProps) => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <div className="max-w-2xl text-white">
-          <span className="text-[10px] font-black uppercase tracking-widest mb-4 block opacity-80">CONSULTING</span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-light mb-3 sm:mb-5">Bespoke consulting services</h2>
-          <p className="home-prose-invert mb-6 sm:mb-8 max-w-xl">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-20%' }}
+          variants={staggerContainer}
+          className="max-w-2xl text-white"
+        >
+          <motion.span
+            variants={staggerItem}
+            className="text-[10px] font-black uppercase tracking-widest mb-4 block opacity-80"
+          >
+            CONSULTING
+          </motion.span>
+          <motion.h2 variants={staggerItem} className="text-3xl sm:text-4xl md:text-5xl font-light mb-3 sm:mb-5">
+            Bespoke consulting services
+          </motion.h2>
+          <motion.p variants={staggerItem} className="home-prose-invert mb-6 sm:mb-8 max-w-xl">
             We are far beyond another staffing organization. Try our highly approachable and result-oriented consulting service at your Best!
-          </p>
-          <button
+          </motion.p>
+          <motion.button
             type="button"
+            variants={staggerItem}
             onClick={() => onNavigate('consulting')}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
             className="flex flex-wrap items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-bcg-neon text-bcg-dark font-bold uppercase tracking-widest text-xs sm:text-sm rounded-sm hover:brightness-110 transition-all group text-left max-w-full"
           >
             LEARN MORE ABOUT OUR SERVICES
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </button>
-        </div>
+          </motion.button>
+        </motion.div>
       </div>
 
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 hidden lg:block pr-12 xl:pr-20">
+      <motion.div
+        initial={{ opacity: 0, x: 24 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.55, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+        className="absolute right-0 top-1/2 -translate-y-1/2 hidden lg:block pr-12 xl:pr-20"
+      >
          <div className="bg-white p-2 sm:p-4 shadow-2xl rotate-3">
             <img
               src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80"
@@ -46,7 +70,7 @@ export const Careers = ({ onNavigate }: CareersProps) => {
               referrerPolicy="no-referrer"
             />
          </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { CONSULTING_SERVICES, PROCESS_STEPS } from '../data/consultingServices';
 import type { ServiceSlug } from '../data/consultingServices';
+import { staggerContainer, staggerItem, viewPort } from '../motionPresets';
 
 interface ConsultingServicesProps {
   onNavigateToService?: (slug: ServiceSlug) => void;
@@ -14,21 +15,30 @@ const ConsultingServices = ({ onNavigateToService }: ConsultingServicesProps) =>
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 sm:mb-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 items-center">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainer}
             className="min-w-0"
           >
-            <span className="text-xs font-black uppercase tracking-[0.3em] text-bcg-forest mb-4 sm:mb-6 block">
+            <motion.span
+              variants={staggerItem}
+              className="text-xs font-black uppercase tracking-[0.3em] text-bcg-forest mb-4 sm:mb-6 block"
+            >
               STRATEGY & IMPACT
-            </span>
-            <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-light text-bcg-dark mb-6 sm:mb-8 tracking-tighter leading-[0.9]">
+            </motion.span>
+            <motion.h1
+              variants={staggerItem}
+              className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-light text-bcg-dark mb-6 sm:mb-8 tracking-tighter leading-[0.9]"
+            >
               Services <br /> <span className="italic font-serif">We Offer</span>
-            </h1>
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-600 leading-relaxed font-light max-w-lg">
+            </motion.h1>
+            <motion.p
+              variants={staggerItem}
+              className="text-lg sm:text-xl md:text-2xl text-gray-600 leading-relaxed font-light max-w-lg"
+            >
               At Nexora, we provide a comprehensive suite of consulting and technical services
               designed to drive transformation and deliver bottom-line impact for your business.
-            </p>
+            </motion.p>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -52,23 +62,29 @@ const ConsultingServices = ({ onNavigateToService }: ConsultingServicesProps) =>
       <section className="relative mb-20 sm:mb-32 border-t border-gray-200/80 bg-gradient-to-b from-[#f7f6f4] to-[#fdfcfb]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-24 pb-4">
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewPort}
+            variants={staggerContainer}
             className="max-w-3xl"
           >
-            <span className="text-xs font-black uppercase tracking-[0.3em] text-bcg-forest mb-4 block">
+            <motion.span
+              variants={staggerItem}
+              className="text-xs font-black uppercase tracking-[0.3em] text-bcg-forest mb-4 block"
+            >
               Capability areas
-            </span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-bcg-dark tracking-tight leading-[1.1] mb-5">
+            </motion.span>
+            <motion.h2
+              variants={staggerItem}
+              className="text-3xl sm:text-4xl md:text-5xl font-light text-bcg-dark tracking-tight leading-[1.1] mb-5"
+            >
               End-to-end services,{' '}
               <span className="italic font-serif text-bcg-forest">built around your outcomes</span>
-            </h2>
-            <p className="text-gray-600 text-lg sm:text-xl font-light leading-relaxed">
+            </motion.h2>
+            <motion.p variants={staggerItem} className="text-gray-600 text-lg sm:text-xl font-light leading-relaxed">
               Each practice pairs senior consultants with delivery teams—so recommendations ship, not
               sit in slides. Explore a lane below.
-            </p>
+            </motion.p>
           </motion.div>
         </div>
 
@@ -111,12 +127,16 @@ const ConsultingServices = ({ onNavigateToService }: ConsultingServicesProps) =>
                     </div>
 
                     {/* Copy */}
-                    <div
+                    <motion.div
                       className={`flex flex-col justify-center px-6 py-8 sm:px-10 sm:py-12 lg:px-12 lg:py-14 xl:px-16 ${
                         isReversed ? 'lg:order-1' : ''
                       }`}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={viewPort}
+                      variants={staggerContainer}
                     >
-                      <div className="flex items-baseline gap-4 mb-4 sm:mb-6">
+                      <motion.div variants={staggerItem} className="flex items-baseline gap-4 mb-4 sm:mb-6">
                         <span
                           className="font-serif text-5xl sm:text-6xl leading-none text-bcg-forest/15 tabular-nums"
                           aria-hidden
@@ -124,21 +144,30 @@ const ConsultingServices = ({ onNavigateToService }: ConsultingServicesProps) =>
                           {String(index + 1).padStart(2, '0')}
                         </span>
                         <div className="h-px flex-1 bg-gradient-to-r from-bcg-neon/80 to-transparent min-w-[2rem]" />
-                      </div>
-                      <h3 className="text-2xl sm:text-3xl lg:text-[1.75rem] xl:text-4xl font-semibold text-bcg-dark tracking-tight mb-4 sm:mb-5">
+                      </motion.div>
+                      <motion.h3
+                        variants={staggerItem}
+                        className="text-2xl sm:text-3xl lg:text-[1.75rem] xl:text-4xl font-semibold text-bcg-dark tracking-tight mb-4 sm:mb-5"
+                      >
                         {item.title}
-                      </h3>
-                      <p className="text-gray-600 text-base sm:text-lg leading-relaxed font-light mb-8 sm:mb-10 max-w-xl">
+                      </motion.h3>
+                      <motion.p
+                        variants={staggerItem}
+                        className="text-gray-600 text-base sm:text-lg leading-relaxed font-light mb-8 sm:mb-10 max-w-xl"
+                      >
                         {item.shortDescription}
-                      </p>
-                      <button
+                      </motion.p>
+                      <motion.button
                         type="button"
+                        variants={staggerItem}
                         onClick={() => onNavigateToService?.(item.slug)}
-                        className="inline-flex items-center self-start rounded-full border border-bcg-forest/20 bg-bcg-forest px-5 py-3 text-xs font-black uppercase tracking-[0.2em] text-white transition-all hover:bg-bcg-dark hover:border-bcg-dark hover:shadow-lg active:scale-[0.98]"
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        className="inline-flex items-center self-start rounded-full border border-bcg-forest/20 bg-bcg-forest px-5 py-3 text-xs font-black uppercase tracking-[0.2em] text-white transition-colors hover:bg-bcg-dark hover:border-bcg-dark hover:shadow-lg"
                       >
                         View capability
-                      </button>
-                    </div>
+                      </motion.button>
+                    </motion.div>
                   </div>
                 </motion.article>
               );

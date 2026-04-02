@@ -15,16 +15,23 @@ const ServiceDetail = ({ slug, onBack }: ServiceDetailProps) => {
   if (!service) {
     return (
       <div className="bg-[#fdfcfb] min-h-screen pt-20 sm:pt-24 pb-12 flex items-center justify-center px-4">
-        <div className="text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+          className="text-center"
+        >
           <h1 className="text-2xl font-bold text-bcg-dark mb-4">Page not found</h1>
-          <button
+          <motion.button
             type="button"
             onClick={onBack}
+            whileHover={{ x: -2 }}
+            whileTap={{ scale: 0.98 }}
             className="text-bcg-forest font-bold uppercase tracking-widest flex items-center gap-2 mx-auto"
           >
             <ArrowLeft className="w-4 h-4" /> Back to Consulting
-          </button>
-        </div>
+          </motion.button>
+        </motion.div>
       </div>
     );
   }
@@ -101,13 +108,15 @@ const ServiceDetail = ({ slug, onBack }: ServiceDetailProps) => {
           transition={{ delay: 0.5 }}
           className="mt-10 sm:mt-14"
         >
-          <button
+          <motion.button
             type="button"
             onClick={onBack}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
             className="inline-flex items-center gap-2 px-6 py-3 bg-bcg-forest text-bcg-neon font-bold uppercase tracking-widest text-xs rounded-full hover:bg-bcg-dark transition-colors"
           >
             <ArrowLeft className="w-4 h-4" /> All services
-          </button>
+          </motion.button>
         </motion.div>
       </div>
     </div>

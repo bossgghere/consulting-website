@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
 import type { PageId } from '../App';
+import { staggerContainer, staggerItem } from '../motionPresets';
 
 interface AboutProps {
   onNavigate: (page: PageId) => void;
@@ -14,36 +15,47 @@ export const About = ({ onNavigate }: AboutProps) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 items-center">
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-60px' }}
+            variants={staggerContainer}
             className="space-y-4 sm:space-y-6"
           >
-            <span className="text-[10px] sm:text-xs font-black uppercase tracking-[0.3em] text-bcg-neon block">
+            <motion.span
+              variants={staggerItem}
+              className="text-[10px] sm:text-xs font-black uppercase tracking-[0.3em] text-bcg-neon block"
+            >
               About Nexora
-            </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.25rem] font-light text-white leading-snug sm:leading-tight tracking-tight">
+            </motion.span>
+            <motion.h2
+              variants={staggerItem}
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.25rem] font-light text-white leading-snug sm:leading-tight tracking-tight"
+            >
               As a top consulting firm, we help clients with{' '}
               <span className="text-bcg-neon italic font-serif">total transformation</span>
               —driving complex change, enabling organizations to grow, and delivering bottom-line impact.
-            </h2>
-            <p className="home-prose-invert max-w-lg">
+            </motion.h2>
+            <motion.p variants={staggerItem} className="home-prose-invert max-w-lg">
               We are in a league of our own, backed by our global entities—strategy, delivery, and outcomes aligned with how you operate.
-            </p>
-            <button
+            </motion.p>
+            <motion.button
+              type="button"
+              variants={staggerItem}
               onClick={() => onNavigate('about')}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               className="flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-bcg-neon text-bcg-dark font-bold uppercase tracking-widest text-xs sm:text-sm rounded-sm hover:brightness-110 transition-all group"
             >
               LEARN MORE
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </button>
+            </motion.button>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
+            viewport={{ once: true, margin: '-40px' }}
+            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+            whileHover={{ scale: 1.01 }}
             className="relative"
           >
             <img

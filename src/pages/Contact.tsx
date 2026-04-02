@@ -1,25 +1,37 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { fadeUp, staggerContainer, staggerItem } from '../motionPresets';
 
 const ContactPage = () => {
   return (
     <div className="bg-[#fdfcfb] min-h-screen pt-20 sm:pt-24 pb-12 sm:pb-20">
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          initial="hidden"
+          animate="visible"
+          variants={staggerContainer}
           className="max-w-4xl mb-16 sm:mb-24"
         >
-          <span className="text-xs font-black uppercase tracking-[0.4em] text-bcg-forest mb-6 sm:mb-8 block">GET IN TOUCH</span>
-          <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-light text-bcg-dark mb-8 sm:mb-12 tracking-tighter leading-[0.85] sm:leading-[0.8]">
+          <motion.span
+            variants={staggerItem}
+            className="text-xs font-black uppercase tracking-[0.4em] text-bcg-forest mb-6 sm:mb-8 block"
+          >
+            GET IN TOUCH
+          </motion.span>
+          <motion.h1
+            variants={staggerItem}
+            className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-light text-bcg-dark mb-8 sm:mb-12 tracking-tighter leading-[0.85] sm:leading-[0.8]"
+          >
             Contact <br /> <span className="italic font-serif">Us</span>
-          </h1>
-          <p className="text-lg sm:text-2xl text-gray-600 font-light leading-relaxed max-w-2xl">
+          </motion.h1>
+          <motion.p
+            variants={staggerItem}
+            className="text-lg sm:text-2xl text-gray-600 font-light leading-relaxed max-w-2xl"
+          >
             Have a question or want to discuss a project? Reach out to our global team of experts.
             We're here to help you navigate your most complex challenges.
-          </p>
+          </motion.p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 sm:gap-16">
@@ -68,10 +80,16 @@ const ContactPage = () => {
                 <label className="text-[10px] font-black uppercase tracking-widest text-gray-400">Message</label>
                 <textarea rows={4} className="w-full bg-gray-50 border-b-2 border-gray-100 rounded-none px-0 py-4 focus:outline-none focus:border-bcg-forest transition-all text-lg font-light resize-none" placeholder="How can we help you?"></textarea>
               </div>
-              <button type="submit" className="w-full bg-bcg-dark text-white font-black uppercase tracking-[0.2em] py-6 rounded-full hover:bg-bcg-forest transition-all duration-300 flex items-center justify-center gap-4 group shadow-xl focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-bcg-forest active:scale-[0.99]">
+              <motion.button
+                type="submit"
+                {...fadeUp(0.12)}
+                whileHover={{ scale: 1.01 }}
+                whileTap={{ scale: 0.99 }}
+                className="w-full bg-bcg-dark text-white font-black uppercase tracking-[0.2em] py-6 rounded-full hover:bg-bcg-forest transition-colors duration-300 flex items-center justify-center gap-4 group shadow-xl focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-bcg-forest"
+              >
                 Send Message
                 <Send className="w-5 h-5 group-hover:translate-x-2 group-hover:-translate-y-1 transition-transform duration-300" />
-              </button>
+              </motion.button>
             </form>
           </motion.div>
 
@@ -88,7 +106,7 @@ const ContactPage = () => {
                 { icon: <Phone />, label: "Call Us", value: "(346) 278-6004", sub: "Mon-Fri, 9am - 6pm GMT" },
                 { icon: <MapPin />, label: "Visit Us", value: "London Office", sub: "20 Fenchurch St, London EC3M 3BY, UK" }
               ].map((item, i) => (
-                <div key={i} className="flex gap-4 sm:gap-8 group min-w-0">
+                <motion.div key={i} {...fadeUp(i * 0.08)} className="flex gap-4 sm:gap-8 group min-w-0">
                   <div className="w-14 h-14 sm:w-16 sm:h-16 bg-bcg-forest text-bcg-neon rounded-2xl sm:rounded-3xl flex items-center justify-center shrink-0 group-hover:rotate-6 transition-transform shadow-lg">
                     {React.cloneElement(item.icon as React.ReactElement, { className: "w-5 h-5 sm:w-6 sm:h-6" })}
                   </div>
@@ -97,11 +115,11 @@ const ContactPage = () => {
                     <p className="text-xl sm:text-2xl text-bcg-dark font-bold tracking-tight mb-1 break-words">{item.value}</p>
                     <p className="text-gray-500 font-light text-sm sm:text-base break-words">{item.sub}</p>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
 
-            <div className="mt-12 sm:mt-20 relative group">
+            <motion.div {...fadeUp(0.15)} className="mt-12 sm:mt-20 relative group">
               <div className="absolute inset-0 bg-bcg-forest/20 rounded-2xl sm:rounded-[3rem] blur-2xl group-hover:blur-3xl transition-all" />
               <div className="relative rounded-2xl sm:rounded-[3rem] overflow-hidden border-4 sm:border-8 border-white shadow-2xl grayscale hover:grayscale-0 transition-all duration-1000">
                 <img
@@ -116,7 +134,7 @@ const ContactPage = () => {
                   <p className="text-white/80 text-sm font-light">London, United Kingdom</p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>

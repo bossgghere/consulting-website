@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import { staggerContainer, staggerItem } from '../motionPresets';
 import { Cookie, X, Check, Settings } from 'lucide-react';
 
 const STORAGE_KEY = 'kabir-cookie-consent';
@@ -69,50 +70,59 @@ export const CookieConsent = () => {
               transition={{ type: 'spring', damping: 25, stiffness: 300 }}
               className="fixed bottom-20 left-4 right-4 z-[100] w-auto max-w-md mx-auto sm:left-auto sm:right-6 sm:mx-0 sm:bottom-24 rounded-2xl bg-bcg-forest text-white shadow-2xl border border-bcg-neon/20 overflow-hidden"
             >
-              <div className="p-6 sm:p-8">
+              <motion.div
+                className="p-6 sm:p-8"
+                initial="hidden"
+                animate="visible"
+                variants={staggerContainer}
+              >
                 <div className="flex items-start justify-between gap-4 mb-4">
-                  <div className="flex items-center gap-3">
+                  <motion.div variants={staggerItem} className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-xl bg-bcg-neon/20 flex items-center justify-center">
                       <Cookie className="w-5 h-5 text-bcg-neon" />
                     </div>
                     <h3 className="text-lg font-bold tracking-tight">Cookie preferences</h3>
-                  </div>
+                  </motion.div>
                   <button
                     type="button"
                     onClick={() => setPanelOpen(false)}
                     aria-label="Close"
-                    className="p-1.5 rounded-lg text-white/70 hover:text-white hover:bg-white/10 transition-colors"
+                    className="p-1.5 rounded-lg text-white/70 hover:text-white hover:bg-white/10 transition-colors shrink-0"
                   >
                     <X className="w-5 h-5" />
                   </button>
                 </div>
-                <p className="text-sm text-white/85 leading-relaxed mb-6">
+                <motion.p variants={staggerItem} className="text-sm text-white/85 leading-relaxed mb-6">
                   We use cookies to improve your experience, remember your preferences, and analyze site traffic. 
                   You can accept all cookies or only essential ones.
-                </p>
-                <div className="flex flex-wrap gap-3">
-                  <button
+                </motion.p>
+                <motion.div variants={staggerItem} className="flex flex-wrap gap-3">
+                  <motion.button
                     type="button"
                     onClick={() => save('accepted')}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
                     className="inline-flex items-center gap-2 px-5 py-2.5 bg-bcg-neon text-bcg-dark font-bold uppercase tracking-widest text-xs rounded-full hover:brightness-110 transition-all"
                   >
                     <Check className="w-4 h-4" /> Accept all
-                  </button>
-                  <button
+                  </motion.button>
+                  <motion.button
                     type="button"
                     onClick={() => save('essential')}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
                     className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/10 text-white font-bold uppercase tracking-widest text-xs rounded-full border border-white/30 hover:bg-white/20 transition-all"
                   >
                     <Settings className="w-4 h-4" /> Essential only
-                  </button>
-                </div>
-                <p className="text-[10px] text-white/60 mt-4">
+                  </motion.button>
+                </motion.div>
+                <motion.p variants={staggerItem} className="text-[10px] text-white/60 mt-4">
                   See our{' '}
                   <a href="#" className="underline hover:text-bcg-neon transition-colors">Privacy Policy</a>
                   {' '}and{' '}
                   <a href="#" className="underline hover:text-bcg-neon transition-colors">Cookie Policy</a>.
-                </p>
-              </div>
+                </motion.p>
+              </motion.div>
             </motion.div>
           </>
         )}

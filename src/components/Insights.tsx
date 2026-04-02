@@ -6,7 +6,8 @@ const FeatureItem = ({ text, isDark = false }: { text: string; isDark?: boolean 
   <motion.div 
     initial={{ opacity: 0, x: -10 }}
     whileInView={{ opacity: 1, x: 0 }}
-    viewport={{ once: true }}
+    viewport={{ once: true, margin: '-28px' }}
+    transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
     className="flex items-start gap-3 group"
   >
     <CheckCircle2 className={`w-5 h-5 ${isDark ? 'text-bcg-neon' : 'text-bcg-forest'} shrink-0 mt-1 group-hover:scale-110 transition-transform`} />
@@ -140,11 +141,23 @@ export const Insights = () => {
               <div className="space-y-6">
                 <h4 className="text-sm font-bold uppercase tracking-widest text-bcg-dark">Nexora Offers -</h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <FeatureItem text="Server and organization support" />
-                  <FeatureItem text="Managed IT Services" />
-                  <FeatureItem text="Individual User Support" />
-                  <FeatureItem text="Customized business IT Solutions" />
-                  <FeatureItem text="Other security and Back-up" />
+                  {[
+                    'Server and organization support',
+                    'Managed IT Services',
+                    'Individual User Support',
+                    'Customized business IT Solutions',
+                    'Other security and Back-up',
+                  ].map((text, i) => (
+                    <motion.div
+                      key={text}
+                      initial={{ opacity: 0, y: 8 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, margin: '-24px' }}
+                      transition={{ duration: 0.4, delay: i * 0.05, ease: [0.22, 1, 0.36, 1] }}
+                    >
+                      <FeatureItem text={text} />
+                    </motion.div>
+                  ))}
                 </div>
               </div>
             </motion.div>

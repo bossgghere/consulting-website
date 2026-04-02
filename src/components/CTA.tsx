@@ -28,8 +28,8 @@ export const CTA = ({ onNavigate }: CTAProps) => {
             type="button"
             onClick={() => onNavigate('about')}
             className="flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-bcg-neon text-bcg-dark font-bold uppercase tracking-widest text-xs sm:text-sm rounded-sm hover:brightness-110 transition-all group shrink-0 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-bcg-forest"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
           >
             LEARN MORE
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

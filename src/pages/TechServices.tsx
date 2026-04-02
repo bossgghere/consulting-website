@@ -97,12 +97,19 @@ const TechServicesPage = () => {
                   "Mechanized, AI-based analytics approach",
                   "Insight-driven quality transformation"
                 ].map((text, i) => (
-                  <div key={i} className="flex items-center gap-4 group">
-                    <div className="w-8 h-8 rounded-full border border-bcg-neon flex items-center justify-center group-hover:bg-bcg-neon transition-colors">
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, x: -12 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: '-32px' }}
+                    transition={{ duration: 0.42, delay: i * 0.07, ease: [0.22, 1, 0.36, 1] }}
+                    className="flex items-center gap-4 group"
+                  >
+                    <div className="w-8 h-8 rounded-full border border-bcg-neon flex items-center justify-center group-hover:bg-bcg-neon transition-colors shrink-0">
                       <CheckCircle2 className="w-4 h-4 text-bcg-neon group-hover:text-bcg-dark transition-colors" />
                     </div>
                     <span className="text-base sm:text-lg font-light text-gray-300 group-hover:text-white transition-colors min-w-0">{text}</span>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </motion.div>

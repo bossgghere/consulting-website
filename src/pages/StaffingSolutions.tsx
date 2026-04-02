@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { CheckCircle2 } from 'lucide-react';
+import { fadeUp } from '../motionPresets';
 
 const StaffingSolutions = () => {
   const features = [
@@ -38,7 +39,9 @@ const StaffingSolutions = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 sm:mb-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 items-start">
           <div className="space-y-6 sm:space-y-8">
-            <h2 className="text-2xl sm:text-3xl font-light text-bcg-dark mb-4 sm:mb-6">At Nexora we offer—</h2>
+            <motion.h2 {...fadeUp()} className="text-2xl sm:text-3xl font-light text-bcg-dark mb-4 sm:mb-6">
+              At Nexora we offer—
+            </motion.h2>
             <div className="space-y-4 sm:space-y-6">
               {features.map((feature, index) => (
                 <motion.div 
@@ -46,7 +49,7 @@ const StaffingSolutions = () => {
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  transition={{ duration: 0.45, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
                   className="flex gap-4 items-start group"
                 >
                   <CheckCircle2 className="w-6 h-6 text-bcg-forest shrink-0 mt-1 group-hover:scale-110 transition-transform" />
@@ -56,40 +59,40 @@ const StaffingSolutions = () => {
             </div>
           </div>
           
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="grid grid-cols-1 gap-8"
-          >
-            <div className="rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl grayscale hover:grayscale-0 transition-all duration-700">
+          <div className="grid grid-cols-1 gap-8">
+            <motion.div
+              {...fadeUp(0)}
+              className="rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl grayscale hover:grayscale-0 transition-all duration-700"
+            >
               <img
                 src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80"
                 alt="Recruitment Team"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
               />
-            </div>
-            <div className="rounded-xl sm:rounded-2xl overflow-hidden shadow-xl grayscale hover:grayscale-0 transition-all duration-700">
+            </motion.div>
+            <motion.div
+              {...fadeUp(0.1)}
+              className="rounded-xl sm:rounded-2xl overflow-hidden shadow-xl grayscale hover:grayscale-0 transition-all duration-700"
+            >
               <img
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80"
                 alt="Professional Collaboration"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
               />
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Bottom Quote Section */}
       <section className="bg-gray-50 py-16 sm:py-20 border-y border-gray-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <p className="text-2xl sm:text-3xl font-light italic text-bcg-dark leading-relaxed">
+          <motion.p {...fadeUp()} className="text-2xl sm:text-3xl font-light italic text-bcg-dark leading-relaxed">
             "Qualitative opportunities for qualified personnel. We care about the norms you set, 
             ensuring a perfect fit for your unique corporate culture."
-          </p>
+          </motion.p>
         </div>
       </section>
     </div>

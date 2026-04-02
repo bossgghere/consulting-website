@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
+import { fadeUp, staggerContainer, staggerItem, viewPort } from '../motionPresets';
 
 const AboutUs = () => {
   return (
@@ -8,19 +9,30 @@ const AboutUs = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 sm:mb-32 relative">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-8 items-end">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainer}
             className="lg:col-span-7 z-10 min-w-0"
           >
-            <span className="text-xs font-black uppercase tracking-[0.4em] text-bcg-forest mb-6 sm:mb-8 block">WHO WE ARE</span>
-            <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl xl:text-[10rem] font-light text-bcg-dark mb-8 sm:mb-12 tracking-tighter leading-[0.85] sm:leading-[0.8]">
+            <motion.span
+              variants={staggerItem}
+              className="text-xs font-black uppercase tracking-[0.4em] text-bcg-forest mb-6 sm:mb-8 block"
+            >
+              WHO WE ARE
+            </motion.span>
+            <motion.h1
+              variants={staggerItem}
+              className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl xl:text-[10rem] font-light text-bcg-dark mb-8 sm:mb-12 tracking-tighter leading-[0.85] sm:leading-[0.8]"
+            >
               About <br /> <span className="italic font-serif">Us</span>
-            </h1>
-            <p className="text-xl sm:text-2xl md:text-3xl text-gray-600 leading-relaxed font-light max-w-xl">
+            </motion.h1>
+            <motion.p
+              variants={staggerItem}
+              className="text-xl sm:text-2xl md:text-3xl text-gray-600 leading-relaxed font-light max-w-xl"
+            >
               Nexora understands the customer's constraints about investing in IT and IT infra.
               We provide tailored services for all category of business demand.
-            </p>
+            </motion.p>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -47,7 +59,9 @@ const AboutUs = () => {
       {/* Values Section - Clean & Minimal */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 sm:mb-32">
         <div className="text-center mb-12 sm:mb-20">
-          <h2 className="text-4xl sm:text-5xl font-light text-bcg-dark tracking-tight">Our <span className="italic font-serif">Values</span></h2>
+          <motion.h2 {...fadeUp()} className="text-4xl sm:text-5xl font-light text-bcg-dark tracking-tight">
+            Our <span className="italic font-serif">Values</span>
+          </motion.h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12">
           {[
@@ -60,7 +74,7 @@ const AboutUs = () => {
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-30px' }}
-              transition={{ delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.5, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
               whileHover={{ y: -4 }}
               className="p-8 sm:p-12 bg-white rounded-[2rem] sm:rounded-[3rem] border border-gray-100 hover:shadow-xl transition-shadow duration-300 text-center group"
             >
@@ -103,16 +117,16 @@ const AboutUs = () => {
               Your Competitive <br /> <span className="italic font-serif">Advantage</span>
             </h2>
             <div className="space-y-6 sm:space-y-8 text-lg sm:text-xl text-gray-600 leading-relaxed font-light">
-              <p>
+              <motion.p {...fadeUp(0)}>
                 We have our own business entities established in nearly every country worldwide, 
                 which means that the legwork required for you to hire and manage international talent 
                 has already been done.
-              </p>
-              <p>
+              </motion.p>
+              <motion.p {...fadeUp(0.08)}>
                 We are your competitive advantage. When you need to get somewhere quickly, 
                 our company is assisting you in growing yours. We do it promptly and efficiently 
                 by drawing on our collective decades of experience.
-              </p>
+              </motion.p>
             </div>
           </motion.div>
         </div>
@@ -124,23 +138,28 @@ const AboutUs = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 sm:gap-24 items-center">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewPort}
+              variants={staggerContainer}
               className="space-y-8 sm:space-y-12"
             >
-              <h2 className="text-4xl sm:text-5xl md:text-7xl font-light leading-[1.1] tracking-tight">
+              <motion.h2
+                variants={staggerItem}
+                className="text-4xl sm:text-5xl md:text-7xl font-light leading-[1.1] tracking-tight"
+              >
                 Our people, expertise, and technology are all of the <span className="text-bcg-neon italic font-serif">highest calibers</span>, 
                 but the combination is unrivaled.
-              </h2>
-              <p className="text-xl sm:text-2xl text-gray-400 font-light max-w-lg">
+              </motion.h2>
+              <motion.p variants={staggerItem} className="text-xl sm:text-2xl text-gray-400 font-light max-w-lg">
                 We are in a league of our own, backed by our global entities.
-              </p>
+              </motion.p>
             </motion.div>
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
+              initial={{ opacity: 0, scale: 0.98 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
+              viewport={viewPort}
+              transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
               className="relative aspect-video rounded-2xl sm:rounded-[3rem] overflow-hidden border-8 border-white/5 shadow-2xl"
             >
               <img
