@@ -12,6 +12,7 @@ import { PressRelease } from './components/PressRelease';
 import { Careers } from './components/Careers';
 import { CTA } from './components/CTA';
 import { Footer } from './components/Footer';
+import { CookieConsent } from './components/CookieConsent';
 import AboutUsPage from './pages/AboutUs';
 import ContactPage from './pages/Contact';
 import StaffingSolutionsPage from './pages/StaffingSolutions';
@@ -74,6 +75,7 @@ export default function App() {
         )}
       </main>
       <Footer />
+      <CookieConsent />
     </div>
   );
 }

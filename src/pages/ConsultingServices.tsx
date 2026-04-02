@@ -75,43 +75,106 @@ const ConsultingServices = ({ onNavigateToService }: ConsultingServicesProps) =>
         </div>
       </section>
 
-      {/* Main Content - Bento Grid */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 sm:mb-32">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-          {CONSULTING_SERVICES.map((item, index) => (
-            <motion.div
-              key={item.slug}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-40px' }}
-              transition={{ duration: 0.5, delay: index * 0.06, ease: [0.22, 1, 0.36, 1] }}
-              whileHover={{ y: -8, transition: { duration: 0.25 } }}
-              className={`p-6 sm:p-10 bg-white rounded-2xl sm:rounded-[2rem] border border-gray-100 hover:border-bcg-neon transition-all duration-300 group flex flex-col cursor-default ${
-                item.size === 'large' ? 'lg:col-span-2' : ''
-              } shadow-sm hover:shadow-2xl`}
-            >
-              <div className="w-12 h-12 sm:w-14 sm:h-14 bg-bcg-forest text-bcg-neon rounded-xl sm:rounded-2xl flex items-center justify-center mb-6 sm:mb-8 group-hover:rotate-12 transition-transform shadow-lg">
-                {ICON_MAP[item.slug]}
-              </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-bcg-dark mb-3 sm:mb-4 tracking-tight">
-                {item.title}
-              </h3>
-              <p className="text-gray-600 leading-relaxed mb-6 sm:mb-8 flex-grow text-base sm:text-lg font-light">
-                {item.shortDescription}
-              </p>
-              <button
-                type="button"
-                onClick={() => onNavigateToService?.(item.slug)}
-                className="flex items-center gap-3 text-bcg-forest font-black uppercase tracking-widest text-[11px] group/btn w-fit"
-              >
-                <span className="relative">
-                  Read more
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-bcg-neon transition-all group-hover/btn:w-full" />
-                </span>
-                <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-2 transition-transform" />
-              </button>
-            </motion.div>
-          ))}
+      {/* Capability areas — editorial strips */}
+      <section className="relative mb-20 sm:mb-32 border-t border-gray-200/80 bg-gradient-to-b from-[#f7f6f4] to-[#fdfcfb]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-24 pb-4">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="max-w-3xl"
+          >
+            <span className="text-xs font-black uppercase tracking-[0.3em] text-bcg-forest mb-4 block">
+              Capability areas
+            </span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-bcg-dark tracking-tight leading-[1.1] mb-5">
+              End-to-end services,{' '}
+              <span className="italic font-serif text-bcg-forest">built around your outcomes</span>
+            </h2>
+            <p className="text-gray-600 text-lg sm:text-xl font-light leading-relaxed">
+              Each practice pairs senior consultants with delivery teams—so recommendations ship, not
+              sit in slides. Explore a lane below.
+            </p>
+          </motion.div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8 sm:pb-12">
+          <div className="hidden lg:flex items-center gap-4 text-[11px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-10">
+            <span className="h-px flex-1 bg-gradient-to-r from-transparent to-gray-300" aria-hidden />
+            <span>Scroll to explore</span>
+            <span className="h-px flex-1 bg-gradient-to-l from-transparent to-gray-300" aria-hidden />
+          </div>
+
+          <div className="space-y-10 sm:space-y-14 lg:space-y-20">
+            {CONSULTING_SERVICES.map((item, index) => {
+              const isReversed = index % 2 === 1;
+              return (
+                <motion.article
+                  key={item.slug}
+                  initial={{ opacity: 0, y: 32 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-60px' }}
+                  transition={{ duration: 0.55, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
+                  className="group relative overflow-hidden rounded-[1.75rem] sm:rounded-[2.25rem] border border-gray-200/90 bg-white shadow-[0_1px_0_rgba(0,0,0,0.04)]"
+                >
+                  <div className="grid lg:grid-cols-2 lg:min-h-[min(420px,70vh)]">
+                    {/* Image */}
+                    <div
+                      className={`relative aspect-[16/11] sm:aspect-[16/10] lg:aspect-auto lg:min-h-[340px] overflow-hidden ${
+                        isReversed ? 'lg:order-2' : ''
+                      }`}
+                    >
+                      <img
+                        src={item.imageUrl}
+                        alt={item.title}
+                        className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                        referrerPolicy="no-referrer"
+                      />
+                      <div
+                        className="pointer-events-none absolute inset-0 bg-gradient-to-t from-bcg-dark/45 via-bcg-dark/5 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-transparent lg:to-bcg-dark/10"
+                        aria-hidden
+                      />
+                      <div className="absolute left-4 top-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-white/95 text-bcg-forest shadow-md backdrop-blur-sm sm:left-6 sm:top-6 sm:h-14 sm:w-14 [&_svg]:h-6 [&_svg]:w-6 sm:[&_svg]:h-7 sm:[&_svg]:w-7">
+                        {ICON_MAP[item.slug]}
+                      </div>
+                    </div>
+
+                    {/* Copy */}
+                    <div
+                      className={`flex flex-col justify-center px-6 py-8 sm:px-10 sm:py-12 lg:px-12 lg:py-14 xl:px-16 ${
+                        isReversed ? 'lg:order-1' : ''
+                      }`}
+                    >
+                      <div className="flex items-baseline gap-4 mb-4 sm:mb-6">
+                        <span
+                          className="font-serif text-5xl sm:text-6xl leading-none text-bcg-forest/15 tabular-nums"
+                          aria-hidden
+                        >
+                          {String(index + 1).padStart(2, '0')}
+                        </span>
+                        <div className="h-px flex-1 bg-gradient-to-r from-bcg-neon/80 to-transparent min-w-[2rem]" />
+                      </div>
+                      <h3 className="text-2xl sm:text-3xl lg:text-[1.75rem] xl:text-4xl font-semibold text-bcg-dark tracking-tight mb-4 sm:mb-5">
+                        {item.title}
+                      </h3>
+                      <p className="text-gray-600 text-base sm:text-lg leading-relaxed font-light mb-8 sm:mb-10 max-w-xl">
+                        {item.shortDescription}
+                      </p>
+                      <button
+                        type="button"
+                        onClick={() => onNavigateToService?.(item.slug)}
+                        className="inline-flex items-center gap-3 self-start rounded-full border border-bcg-forest/20 bg-bcg-forest px-5 py-3 text-xs font-black uppercase tracking-[0.2em] text-white transition-all hover:bg-bcg-dark hover:border-bcg-dark hover:shadow-lg active:scale-[0.98]"
+                      >
+                        View capability
+                        <ArrowRight className="h-4 w-4" aria-hidden />
+                      </button>
+                    </div>
+                  </div>
+                </motion.article>
+              );
+            })}
+          </div>
         </div>
       </section>
 

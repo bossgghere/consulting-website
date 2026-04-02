@@ -45,8 +45,7 @@ export const Footer = () => {
 
         <div className="flex flex-col lg:flex-row justify-between items-center gap-6 sm:gap-8 pt-8 sm:pt-12 border-t border-gray-200">
           <div className="flex flex-wrap items-center gap-2 sm:gap-4 justify-center lg:justify-start">
-             <span className="text-2xl sm:text-3xl font-bold tracking-tighter text-bcg-dark">NEXORA</span>
-             <span className="text-[10px] text-gray-400 uppercase tracking-widest">NEXORA GROUP</span>
+            <span className="text-2xl sm:text-3xl font-bold tracking-tighter text-bcg-dark">NEXORA</span>
           </div>
 
           <div className="flex flex-wrap justify-center gap-4 sm:gap-8 text-[10px] font-bold uppercase tracking-widest text-gray-600">
