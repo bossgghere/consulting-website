@@ -20,6 +20,10 @@ import StaffingSolutionsPage from './pages/StaffingSolutions';
 import ConsultingServicesPage from './pages/ConsultingServices';
 import TechServicesPage from './pages/TechServices';
 import ServiceDetail from './pages/ServiceDetail';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfUse from './pages/TermsOfUse';
+import CookiePolicy from './pages/CookiePolicy';
+import ResponsibleDisclosure from './pages/ResponsibleDisclosure';
 import NotFound from './pages/NotFound';
 
 const HomePage = () => (
@@ -52,6 +56,13 @@ export default function App() {
           <Route path="/consulting-services" element={<ConsultingServicesPage />} />
           <Route path="/tech-services" element={<TechServicesPage />} />
           <Route path="/service/:slug" element={<ServiceDetail />} />
+          
+          {/* Legal & Support Routes */}
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-use" element={<TermsOfUse />} />
+          <Route path="/cookie-policy" element={<CookiePolicy />} />
+          <Route path="/responsible-disclosure" element={<ResponsibleDisclosure />} />
+
           {/* Aliases for convenience if needed */}
           <Route path="/insights" element={<Navigate to="/" replace />} />
           <Route path="/careers" element={<Navigate to="/" replace />} />

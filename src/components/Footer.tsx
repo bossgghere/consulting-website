@@ -52,11 +52,10 @@ export const Footer = () => {
           </div>
 
           <div className="flex flex-wrap justify-center gap-x-4 gap-y-3 sm:gap-8 max-w-full text-[10px] font-bold uppercase tracking-widest text-gray-600 px-1">
-            <Link to="/about" className="hover:text-bcg-forest transition-colors">PRIVACY POLICY</Link>
-            <Link to="/about" className="hover:text-bcg-forest transition-colors">TERMS OF USE</Link>
-            <Link to="/about" className="hover:text-bcg-forest transition-colors">SITEMAP</Link>
-            <Link to="/about" className="hover:text-bcg-forest transition-colors">RESPONSIBLE DISCLOSURE</Link>
-            <Link to="/about" className="hover:text-bcg-forest transition-colors">COOKIE PREFERENCES</Link>
+            <Link to="/privacy-policy" className="hover:text-bcg-forest transition-colors">PRIVACY POLICY</Link>
+            <Link to="/terms-of-use" className="hover:text-bcg-forest transition-colors">TERMS OF USE</Link>
+            <Link to="/responsible-disclosure" className="hover:text-bcg-forest transition-colors">RESPONSIBLE DISCLOSURE</Link>
+            <Link to="/cookie-policy" className="hover:text-bcg-forest transition-colors">COOKIE PREFERENCES</Link>
           </div>
         </motion.div>
 

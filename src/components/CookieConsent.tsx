@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import { Link } from 'react-router-dom';
 import { staggerContainer, staggerItem } from '../motionPresets';
 import { Cookie, X, Check, Settings } from 'lucide-react';
 
@@ -118,9 +119,9 @@ export const CookieConsent = () => {
                 </motion.div>
                 <motion.p variants={staggerItem} className="text-[10px] text-white/60 mt-4">
                   See our{' '}
-                  <a href="#" className="underline hover:text-bcg-neon transition-colors">Privacy Policy</a>
+                  <Link to="/privacy-policy" className="underline hover:text-bcg-neon transition-colors">Privacy Policy</Link>
                   {' '}and{' '}
-                  <a href="#" className="underline hover:text-bcg-neon transition-colors">Cookie Policy</a>.
+                  <Link to="/cookie-policy" className="underline hover:text-bcg-neon transition-colors">Cookie Policy</Link>.
                 </motion.p>
               </motion.div>
             </motion.div>
