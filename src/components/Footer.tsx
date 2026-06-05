@@ -56,8 +56,8 @@ export const Footer = () => {
                 Nexora is an Equal Opportunity Employer. All qualified applicants will receive consideration for employment without regard to race, color, age, religion, sex, sexual orientation, gender identity / expression, national origin, protected veteran status, or any other characteristic protected under federal, state, or local laws.
               </p>
            </div>
-           <div className="text-[10px] text-gray-500 shrink-0 text-right lg:text-left">
-              © 2026 Nexora
+           <div className="text-[10px] text-gray-500 shrink-0 text-center lg:text-left">
+              © {new Date().getFullYear()} Nexora
            </div>
         </motion.div>
       </div>

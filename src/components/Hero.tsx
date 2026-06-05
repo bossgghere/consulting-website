@@ -101,13 +101,13 @@ export const Hero = () => {
         <motion.div initial="hidden" animate="visible" variants={staggerContainer}>
           <motion.h1
             variants={textReveal}
-            className="text-3xl sm:text-4xl md:text-5xl font-light text-text-primary mb-6 sm:mb-10 tracking-tight"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-text-primary mb-6 sm:mb-10 tracking-tight"
           >
             Nexora
           </motion.h1>
           <motion.div
             variants={staggerItem}
-            className="relative w-full aspect-[5/3] sm:aspect-[2/1] lg:aspect-[21/9] min-h-[180px] sm:min-h-0 overflow-hidden rounded-lg sm:rounded-sm shadow-2xl group"
+            className="relative w-full aspect-[4/3] sm:aspect-[2/1] lg:aspect-[21/9] xl:aspect-[25/9] min-h-[220px] sm:min-h-0 overflow-hidden rounded-lg sm:rounded-sm shadow-2xl group"
           >
             <AnimatePresence initial={false} custom={direction} mode="popLayout">
               <motion.div

@@ -22,13 +22,13 @@ const AboutUs = () => {
             </motion.span>
             <motion.h1
               variants={staggerItem}
-              className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl xl:text-[10rem] font-light text-text-primary mb-8 sm:mb-12 tracking-tighter leading-[0.85] sm:leading-[0.8]"
+              className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-light text-text-primary mb-8 sm:mb-12 tracking-tighter leading-[0.85] sm:leading-[0.8]"
             >
               About <br /> <span className="italic font-serif">Us</span>
             </motion.h1>
             <motion.p
               variants={staggerItem}
-              className="text-xl sm:text-2xl md:text-3xl text-text-secondary leading-relaxed font-light max-w-xl"
+              className="text-xl sm:text-2xl md:text-3xl text-text-secondary leading-relaxed font-light max-w-xl lg:max-w-2xl"
             >
               Nexora understands the customer's constraints about investing in IT and IT infra.
               We provide tailored services for all category of business demand.

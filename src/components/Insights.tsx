@@ -109,8 +109,8 @@ export const Insights = () => {
                 transition={{ duration: 0.3 }}
               >
                 <img
-                  src="/images/insights/cybersecurity-data.webp"
-                  alt="IT Support"
+                  src="/images/consulting-services/tech-support.jpg"
+                  alt="Professional IT Support"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
                 />

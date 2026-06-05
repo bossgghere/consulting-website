@@ -106,7 +106,7 @@ const ConsultingServices = () => {
                   <div className="grid lg:grid-cols-2 lg:min-h-[min(420px,70vh)]">
                     {/* Image */}
                     <div
-                      className={`relative aspect-[16/11] sm:aspect-[16/10] lg:aspect-auto lg:min-h-[340px] overflow-hidden ${
+                      className={`relative aspect-[16/11] sm:aspect-[21/9] lg:aspect-auto lg:min-h-[340px] overflow-hidden ${
                         isReversed ? 'lg:order-2' : ''
                       }`}
                     >
@@ -149,7 +149,7 @@ const ConsultingServices = () => {
                       </motion.h3>
                       <motion.p
                         variants={staggerItem}
-                        className="text-text-secondary text-base sm:text-lg leading-relaxed font-light mb-8 sm:mb-10 max-w-xl"
+                        className="text-text-secondary text-base sm:text-lg leading-relaxed font-light mb-8 sm:mb-10 max-w-xl lg:max-w-2xl"
                       >
                         {item.shortDescription}
                       </motion.p>
@@ -180,7 +180,7 @@ const ConsultingServices = () => {
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light mb-8 sm:mb-12 tracking-tight">
                 How We <span className="italic font-serif">Deliver</span>
               </h2>
-              <div className="space-y-8 sm:space-y-12">
+              <div className="space-y-6 sm:space-y-10 lg:space-y-12">
                 {PROCESS_STEPS.map((item, i) => (
                   <motion.div
                     key={item.slug}
@@ -188,19 +188,19 @@ const ConsultingServices = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1 }}
-                    className="flex flex-col sm:flex-row gap-4 sm:gap-8 group"
+                    className="flex flex-col sm:flex-row gap-3 sm:gap-8 group"
                   >
-                    <span className="text-3xl sm:text-4xl font-serif italic text-accent opacity-50 group-hover:opacity-100 transition-opacity">
+                    <span className="text-2xl sm:text-4xl font-serif italic text-accent opacity-50 group-hover:opacity-100 transition-opacity">
                       {String(i + 1).padStart(2, '0')}
                     </span>
                     <div className="flex-1">
-                      <h4 className="text-lg sm:text-xl font-bold mb-2">{item.title}</h4>
-                      <p className="text-white/60 font-light leading-relaxed text-sm sm:text-base mb-4">
+                      <h4 className="text-base sm:text-xl font-bold mb-1 sm:mb-2">{item.title}</h4>
+                      <p className="text-white/60 font-light leading-relaxed text-sm sm:text-base mb-3 sm:mb-4">
                         {item.shortDescription}
                       </p>
                       <Link
                         to={`/service/${item.slug}`}
-                        className="text-accent font-bold uppercase tracking-widest text-[11px] w-fit underline-offset-4 hover:underline"
+                        className="text-accent font-bold uppercase tracking-widest text-[10px] sm:text-[11px] w-fit underline-offset-4 hover:underline"
                       >
                         Read more
                       </Link>

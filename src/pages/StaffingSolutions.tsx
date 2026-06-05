@@ -87,12 +87,19 @@ const StaffingSolutions = () => {
       </section>
 
       {/* Bottom Quote Section */}
-      <section className="bg-surface-alt py-16 sm:py-20 border-y border-border-subtle">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <motion.p {...fadeUp()} className="text-2xl sm:text-3xl font-light italic text-text-primary leading-relaxed">
-            "Qualitative opportunities for qualified personnel. We care about the norms you set, 
-            ensuring a perfect fit for your unique corporate culture."
-          </motion.p>
+      <section className="bg-surface-alt py-20 sm:py-32 border-y border-border-subtle relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,var(--theme-primary-hover),transparent)] opacity-[0.03] pointer-events-none" />
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
+          <motion.div {...fadeUp()}>
+            <p className="text-2xl sm:text-3xl md:text-4xl font-light italic text-text-primary leading-tight mb-8">
+              "We provide qualitative opportunities for qualified personnel—bridging the gap between 
+              ambition and industry excellence."
+            </p>
+            <div className="flex flex-col items-center gap-2">
+              <div className="w-12 h-px bg-primary" />
+              <p className="text-xs font-black uppercase tracking-[0.3em] text-primary">Nexora Leadership</p>
+            </div>
+          </motion.div>
         </div>
       </section>
     </div>

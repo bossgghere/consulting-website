@@ -40,7 +40,7 @@ const ContactPage = () => {
             initial={{ opacity: 0, x: -24 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:col-span-7 bg-surface p-5 sm:p-8 md:p-12 lg:p-16 rounded-2xl sm:rounded-[3rem] shadow-2xl border border-border-subtle min-w-0"
+            className="lg:col-span-7 bg-surface p-6 sm:p-8 md:p-12 lg:p-16 rounded-2xl sm:rounded-[3rem] shadow-2xl border border-border-subtle min-w-0"
           >
             <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
               <motion.div
@@ -51,16 +51,16 @@ const ContactPage = () => {
               >
                 <div className="space-y-3">
                   <label className="text-[10px] font-black uppercase tracking-widest text-gray-400">First Name</label>
-                  <input type="text" className="w-full bg-background-alt border-b-2 border-border-subtle rounded-none px-0 py-4 focus:outline-none focus:border-primary focus-visible:ring-2 focus-visible:ring-primary/20 transition-all text-lg font-light" placeholder="Jane" />
+                  <input type="text" className="w-full bg-background-alt border-b-2 border-border-subtle rounded-none px-0 py-4 focus:outline-none focus:border-primary transition-all text-lg font-light" placeholder="Jane" />
                 </div>
                 <div className="space-y-3">
                   <label className="text-[10px] font-black uppercase tracking-widest text-gray-400">Last Name</label>
-                  <input type="text" className="w-full bg-background-alt border-b-2 border-border-subtle rounded-none px-0 py-4 focus:outline-none focus:border-primary focus-visible:ring-2 focus-visible:ring-primary/20 transition-all text-lg font-light" placeholder="Doe" />
+                  <input type="text" className="w-full bg-background-alt border-b-2 border-border-subtle rounded-none px-0 py-4 focus:outline-none focus:border-primary transition-all text-lg font-light" placeholder="Doe" />
                 </div>
               </motion.div>
               <div className="space-y-3">
                 <label className="text-[10px] font-black uppercase tracking-widest text-gray-400">Email Address</label>
-                <input type="email" className="w-full bg-background-alt border-b-2 border-border-subtle rounded-none px-0 py-4 focus:outline-none focus:border-primary focus-visible:ring-2 focus-visible:ring-primary/20 transition-all text-lg font-light" placeholder="jane@example.com" />
+                <input type="email" className="w-full bg-background-alt border-b-2 border-border-subtle rounded-none px-0 py-4 focus:outline-none focus:border-primary transition-all text-lg font-light" placeholder="jane@example.com" />
               </div>
               <div className="space-y-3">
                 <label className="text-[10px] font-black uppercase tracking-widest text-gray-400">Subject</label>

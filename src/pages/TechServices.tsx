@@ -19,7 +19,7 @@ const TechServicesPage = () => {
   return (
     <div className="bg-background-alt min-h-screen pt-20 sm:pt-24">
       {/* Hero Section - Bold & Immersive */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 sm:mb-24 lg:mb-32">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 sm:mb-24 lg:mb-32 overflow-visible">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-14 lg:gap-16 items-center">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
@@ -63,10 +63,10 @@ const TechServicesPage = () => {
               </div>
             </div>
             {/* Floating Elements — inset on small screens to avoid horizontal overflow */}
-            <div className="absolute top-2 right-2 sm:-top-10 sm:-right-6 lg:-top-12 lg:-right-12 w-28 h-28 sm:w-36 sm:h-36 lg:w-40 lg:h-40 bg-accent rounded-full flex items-center justify-center p-4 sm:p-6 text-center shadow-xl animate-bounce-slow z-20">
+            <div className="absolute top-2 right-2 sm:-top-6 lg:-top-12 sm:-right-4 lg:-right-12 w-28 h-28 sm:w-32 lg:w-40 h-28 sm:h-32 lg:h-40 bg-accent rounded-full flex items-center justify-center p-4 sm:p-6 text-center shadow-xl animate-bounce-slow z-20">
               <p className="text-text-primary font-black text-[9px] sm:text-[10px] uppercase tracking-widest px-1">Innovation Driven</p>
             </div>
-            <div className="absolute bottom-6 left-3 sm:bottom-12 sm:left-4 md:-left-8 lg:-left-12 bg-surface p-5 sm:p-8 rounded-2xl sm:rounded-3xl shadow-2xl border border-border-subtle z-20 hidden sm:block">
+            <div className="absolute bottom-4 left-4 sm:-left-8 lg:-left-12 bg-surface p-5 sm:p-8 rounded-2xl sm:rounded-3xl shadow-2xl border border-border-subtle z-20">
               <p className="text-primary font-black text-2xl sm:text-3xl tracking-tighter">99.9%</p>
               <p className="text-text-secondary text-[10px] uppercase tracking-widest font-bold">Uptime Guaranteed</p>
             </div>

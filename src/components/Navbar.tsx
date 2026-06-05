@@ -32,20 +32,20 @@ export const Navbar = () => {
           className="flex justify-between items-center h-16 sm:h-20"
         >
           {/* Logo Section with Accent Rail */}
-          <div className="flex items-center gap-4 sm:gap-6">
+          <div className="flex items-center gap-3 sm:gap-6">
             {/* Architectural Accent Rail */}
-            <div className="w-[3px] h-6 bg-accent rounded-full hidden sm:block" />
+            <div className="w-[2px] sm:w-[3px] h-5 sm:h-6 bg-accent rounded-full hidden xs:block" />
             
-            <Link to="/" className="group">
-              <span className="text-xl sm:text-2xl font-black tracking-tighter text-text-primary group-hover:text-primary transition-colors">
+            <Link to="/" className="group flex items-center">
+              <span className="text-lg sm:text-2xl font-black tracking-tighter text-text-primary group-hover:text-primary transition-colors">
                 NEXORA
               </span>
             </Link>
           </div>
 
           {/* Desktop Navigation (Unified) */}
-          <div className="hidden lg:flex items-center gap-2">
-            <div className="font-nav flex items-center gap-1 text-[11px] font-black uppercase tracking-[0.2em] text-text-primary">
+          <div className="hidden lg:flex items-center gap-1 xl:gap-2">
+            <div className="font-nav flex items-center gap-0.5 xl:gap-1 text-[10px] xl:text-[11px] font-black uppercase tracking-[0.2em] text-text-primary">
               {NAV_LINKS.map(({ path, label }) => {
                 const isActive = path === '/consulting-services' ? isConsultingActive : pathname === path;
                 return (
@@ -56,7 +56,7 @@ export const Navbar = () => {
                       isActive 
                         ? 'text-primary bg-primary/5 shadow-[inset_0_0_0_1px_rgba(var(--theme-primary-rgb),0.1)]' 
                         : 'text-text-secondary hover:text-primary hover:bg-primary/5'
-                    } px-5 py-2 rounded-sm transition-all duration-300`}
+                    } px-4 xl:px-5 py-2 rounded-sm transition-all duration-300`}
                   >
                     {label}
                   </NavLink>

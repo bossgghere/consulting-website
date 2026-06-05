@@ -84,7 +84,7 @@ const ServiceDetail = () => {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.35 }}
-          className="prose prose-lg max-w-none"
+          className="prose prose-lg max-w-3xl"
         >
           <p className="text-lg sm:text-xl text-text-secondary leading-relaxed font-light">
             {service.longDescription}
