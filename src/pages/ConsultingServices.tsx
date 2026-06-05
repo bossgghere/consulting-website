@@ -6,7 +6,7 @@ import { staggerContainer, staggerItem, viewPort } from '../motionPresets';
 
 const ConsultingServices = () => {
   return (
-    <div className="bg-[#fdfcfb] min-h-screen pt-20 sm:pt-24 pb-12 sm:pb-20">
+    <div className="bg-background-alt min-h-screen pt-20 sm:pt-24 pb-12 sm:pb-20">
       {/* Hero Section - Editorial Style */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 sm:mb-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 items-center">
@@ -18,19 +18,19 @@ const ConsultingServices = () => {
           >
             <motion.span
               variants={staggerItem}
-              className="text-xs font-black uppercase tracking-[0.3em] text-bcg-forest mb-4 sm:mb-6 block"
+              className="text-xs font-black uppercase tracking-[0.3em] text-primary mb-4 sm:mb-6 block"
             >
               STRATEGY & IMPACT
             </motion.span>
             <motion.h1
               variants={staggerItem}
-              className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-light text-bcg-dark mb-6 sm:mb-8 tracking-tighter leading-[0.9]"
+              className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-light text-text-primary mb-6 sm:mb-8 tracking-tighter leading-[0.9]"
             >
               Services <br /> <span className="italic font-serif">We Offer</span>
             </motion.h1>
             <motion.p
               variants={staggerItem}
-              className="text-lg sm:text-xl md:text-2xl text-gray-600 leading-relaxed font-light max-w-lg"
+              className="text-lg sm:text-xl md:text-2xl text-text-secondary leading-relaxed font-light max-w-lg"
             >
               At Nexora, we provide a comprehensive suite of consulting and technical services
               designed to drive transformation and deliver bottom-line impact for your business.
@@ -42,8 +42,8 @@ const ConsultingServices = () => {
             transition={{ duration: 1 }}
             className="relative aspect-square max-w-lg mx-auto lg:max-w-none"
           >
-            <div className="absolute inset-0 border border-bcg-forest/20 rounded-full animate-pulse hidden sm:block" />
-            <div className="absolute inset-8 sm:inset-12 border border-bcg-forest/10 rounded-full hidden sm:block" />
+            <div className="absolute inset-0 border border-primary/20 rounded-full animate-pulse hidden sm:block" />
+            <div className="absolute inset-8 sm:inset-12 border border-primary/10 rounded-full hidden sm:block" />
             <img
               src="/images/shared/team-meeting.webp"
               alt="Consulting strategy"
@@ -55,7 +55,7 @@ const ConsultingServices = () => {
       </section>
 
       {/* Capability areas — editorial strips */}
-      <section className="relative mb-20 sm:mb-32 border-t border-gray-200/80 bg-gradient-to-b from-[#f7f6f4] to-[#fdfcfb]">
+      <section className="relative mb-20 sm:mb-32 border-t border-gray-200/80 bg-gradient-to-b from-gradient-start to-gradient-end">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-24 pb-4">
           <motion.div
             initial="hidden"
@@ -66,18 +66,18 @@ const ConsultingServices = () => {
           >
             <motion.span
               variants={staggerItem}
-              className="text-xs font-black uppercase tracking-[0.3em] text-bcg-forest mb-4 block"
+              className="text-xs font-black uppercase tracking-[0.3em] text-primary mb-4 block"
             >
               Capability areas
             </motion.span>
             <motion.h2
               variants={staggerItem}
-              className="text-3xl sm:text-4xl md:text-5xl font-light text-bcg-dark tracking-tight leading-[1.1] mb-5"
+              className="text-3xl sm:text-4xl md:text-5xl font-light text-text-primary tracking-tight leading-[1.1] mb-5"
             >
               End-to-end services,{' '}
-              <span className="italic font-serif text-bcg-forest">built around your outcomes</span>
+              <span className="italic font-serif text-primary">built around your outcomes</span>
             </motion.h2>
-            <motion.p variants={staggerItem} className="text-gray-600 text-lg sm:text-xl font-light leading-relaxed">
+            <motion.p variants={staggerItem} className="text-text-secondary text-lg sm:text-xl font-light leading-relaxed">
               Each practice pairs senior consultants with delivery teams—so recommendations ship, not
               sit in slides. Explore a lane below.
             </motion.p>
@@ -101,7 +101,7 @@ const ConsultingServices = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-60px' }}
                   transition={{ duration: 0.55, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
-                  className="group relative overflow-hidden rounded-[1.75rem] sm:rounded-[2.25rem] border border-gray-200/90 bg-white shadow-[0_1px_0_rgba(0,0,0,0.04)]"
+                  className="group relative overflow-hidden rounded-[1.75rem] sm:rounded-[2.25rem] border border-gray-200/90 bg-surface shadow-[0_1px_0_rgba(0,0,0,0.04)]"
                 >
                   <div className="grid lg:grid-cols-2 lg:min-h-[min(420px,70vh)]">
                     {/* Image */}
@@ -117,7 +117,7 @@ const ConsultingServices = () => {
                         referrerPolicy="no-referrer"
                       />
                       <div
-                        className="pointer-events-none absolute inset-0 bg-gradient-to-t from-bcg-dark/45 via-bcg-dark/5 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-transparent lg:to-bcg-dark/10"
+                        className="pointer-events-none absolute inset-0 bg-gradient-to-t from-primary/45 via-primary/5 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-transparent lg:to-primary/10"
                         aria-hidden
                       />
                     </div>
@@ -134,28 +134,28 @@ const ConsultingServices = () => {
                     >
                       <motion.div variants={staggerItem} className="flex items-baseline gap-4 mb-4 sm:mb-6">
                         <span
-                          className="font-serif text-5xl sm:text-6xl leading-none text-bcg-forest/15 tabular-nums"
+                          className="font-serif text-5xl sm:text-6xl leading-none text-primary/15 tabular-nums"
                           aria-hidden
                         >
                           {String(index + 1).padStart(2, '0')}
                         </span>
-                        <div className="h-px flex-1 bg-gradient-to-r from-bcg-neon/80 to-transparent min-w-[2rem]" />
+                        <div className="h-px flex-1 bg-gradient-to-r from-accent/80 to-transparent min-w-[2rem]" />
                       </motion.div>
                       <motion.h3
                         variants={staggerItem}
-                        className="text-2xl sm:text-3xl lg:text-[1.75rem] xl:text-4xl font-semibold text-bcg-dark tracking-tight mb-4 sm:mb-5"
+                        className="text-2xl sm:text-3xl lg:text-[1.75rem] xl:text-4xl font-semibold text-text-primary tracking-tight mb-4 sm:mb-5"
                       >
                         {item.title}
                       </motion.h3>
                       <motion.p
                         variants={staggerItem}
-                        className="text-gray-600 text-base sm:text-lg leading-relaxed font-light mb-8 sm:mb-10 max-w-xl"
+                        className="text-text-secondary text-base sm:text-lg leading-relaxed font-light mb-8 sm:mb-10 max-w-xl"
                       >
                         {item.shortDescription}
                       </motion.p>
                       <Link
                         to={`/service/${item.slug}`}
-                        className="inline-flex items-center self-start rounded-full border border-bcg-forest/20 bg-bcg-forest px-5 py-3 text-xs font-black uppercase tracking-[0.2em] text-white transition-colors hover:bg-bcg-dark hover:border-bcg-dark hover:shadow-lg"
+                        className="inline-flex items-center self-start rounded-full border border-primary/20 bg-primary px-5 py-3 text-xs font-black uppercase tracking-[0.2em] text-white transition-colors hover:bg-primary-hover hover:shadow-lg"
                       >
                         View capability
                       </Link>
@@ -169,12 +169,12 @@ const ConsultingServices = () => {
       </section>
 
       {/* How We Work Section */}
-      <section className="py-16 sm:py-24 lg:py-32 bg-bcg-dark text-white overflow-hidden relative">
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-bcg-forest/20 skew-x-12 translate-x-1/2 pointer-events-none" />
+      <section className="py-16 sm:py-24 lg:py-32 bg-primary text-text-on-dark overflow-hidden relative">
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-accent/10 skew-x-12 translate-x-1/2 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="min-w-0">
-              <span className="text-xs font-black uppercase tracking-[0.3em] text-bcg-neon mb-4 sm:mb-6 block">
+              <span className="text-xs font-black uppercase tracking-[0.3em] text-accent mb-4 sm:mb-6 block">
                 OUR PROCESS
               </span>
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light mb-8 sm:mb-12 tracking-tight">
@@ -190,17 +190,17 @@ const ConsultingServices = () => {
                     transition={{ delay: i * 0.1 }}
                     className="flex flex-col sm:flex-row gap-4 sm:gap-8 group"
                   >
-                    <span className="text-3xl sm:text-4xl font-serif italic text-bcg-neon opacity-50 group-hover:opacity-100 transition-opacity">
+                    <span className="text-3xl sm:text-4xl font-serif italic text-accent opacity-50 group-hover:opacity-100 transition-opacity">
                       {String(i + 1).padStart(2, '0')}
                     </span>
                     <div className="flex-1">
                       <h4 className="text-lg sm:text-xl font-bold mb-2">{item.title}</h4>
-                      <p className="text-gray-400 font-light leading-relaxed text-sm sm:text-base mb-4">
+                      <p className="text-white/60 font-light leading-relaxed text-sm sm:text-base mb-4">
                         {item.shortDescription}
                       </p>
                       <Link
                         to={`/service/${item.slug}`}
-                        className="text-bcg-neon font-bold uppercase tracking-widest text-[11px] w-fit underline-offset-4 hover:underline"
+                        className="text-accent font-bold uppercase tracking-widest text-[11px] w-fit underline-offset-4 hover:underline"
                       >
                         Read more
                       </Link>
@@ -223,7 +223,7 @@ const ConsultingServices = () => {
                   referrerPolicy="no-referrer"
                 />
               </motion.div>
-              <div className="absolute bottom-3 right-3 sm:-bottom-8 sm:-right-8 md:-bottom-12 md:-right-12 w-28 h-28 sm:w-36 sm:h-36 md:w-48 md:h-48 bg-bcg-neon rounded-full flex items-center justify-center text-bcg-dark p-4 sm:p-6 md:p-8 text-center">
+              <div className="absolute bottom-3 right-3 sm:-bottom-8 sm:-right-8 md:-bottom-12 md:-right-12 w-28 h-28 sm:w-36 sm:h-36 md:w-48 md:h-48 bg-accent rounded-full flex items-center justify-center text-text-primary p-4 sm:p-6 md:p-8 text-center">
                 <p className="font-black text-[10px] sm:text-xs uppercase tracking-widest">
                   Result Oriented
                 </p>

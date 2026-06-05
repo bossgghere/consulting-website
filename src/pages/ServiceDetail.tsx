@@ -11,17 +11,17 @@ const ServiceDetail = () => {
 
   if (!service) {
     return (
-      <div className="bg-[#fdfcfb] min-h-screen pt-20 sm:pt-24 pb-12 flex items-center justify-center px-4">
+      <div className="bg-background-alt min-h-screen pt-20 sm:pt-24 pb-12 flex items-center justify-center px-4">
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
           className="text-center"
         >
-          <h1 className="text-2xl font-bold text-bcg-dark mb-4">Page not found</h1>
+          <h1 className="text-2xl font-bold text-text-primary mb-4">Page not found</h1>
           <Link
             to="/consulting-services"
-            className="text-bcg-forest font-bold uppercase tracking-widest flex items-center gap-2 mx-auto"
+            className="text-primary font-bold uppercase tracking-widest flex items-center gap-2 mx-auto"
           >
             <ArrowLeft className="w-4 h-4" /> Back to Consulting
           </Link>
@@ -33,12 +33,12 @@ const ServiceDetail = () => {
   const isProcess = slug?.startsWith('process-');
 
   return (
-    <div className="bg-[#fdfcfb] min-h-screen pt-20 sm:pt-24 pb-12 sm:pb-20">
+    <div className="bg-background-alt min-h-screen pt-20 sm:pt-24 pb-12 sm:pb-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Back link */}
         <Link
           to="/consulting-services"
-          className="flex items-center gap-2 text-bcg-forest font-black uppercase tracking-widest text-[11px] mb-8 sm:mb-12 hover:gap-4 transition-all group"
+          className="flex items-center gap-2 text-primary font-black uppercase tracking-widest text-[11px] mb-8 sm:mb-12 hover:gap-4 transition-all group"
         >
           <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
           Back to {isProcess ? 'Process' : 'Services'}
@@ -66,7 +66,7 @@ const ServiceDetail = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="text-xs font-black uppercase tracking-[0.3em] text-bcg-forest block mb-4"
+          className="text-xs font-black uppercase tracking-[0.3em] text-primary block mb-4"
         >
           {isProcess ? 'Our Process' : 'Consulting Service'}
         </motion.span>
@@ -74,7 +74,7 @@ const ServiceDetail = () => {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.25 }}
-          className="text-4xl sm:text-5xl md:text-6xl font-light text-bcg-dark tracking-tight mb-6 sm:mb-8"
+          className="text-4xl sm:text-5xl md:text-6xl font-light text-text-primary tracking-tight mb-6 sm:mb-8"
         >
           {service.title}
         </motion.h1>
@@ -86,7 +86,7 @@ const ServiceDetail = () => {
           transition={{ duration: 0.5, delay: 0.35 }}
           className="prose prose-lg max-w-none"
         >
-          <p className="text-lg sm:text-xl text-gray-600 leading-relaxed font-light">
+          <p className="text-lg sm:text-xl text-text-secondary leading-relaxed font-light">
             {service.longDescription}
           </p>
         </motion.div>
@@ -100,7 +100,7 @@ const ServiceDetail = () => {
         >
           <Link
             to="/consulting-services"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-bcg-forest text-bcg-neon font-bold uppercase tracking-widest text-xs rounded-full hover:bg-bcg-dark transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-text-on-dark font-bold uppercase tracking-widest text-xs rounded-full hover:bg-primary-hover transition-colors"
           >
             <ArrowLeft className="w-4 h-4" /> All services
           </Link>

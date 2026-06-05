@@ -13,11 +13,11 @@ const NotFound = () => {
         animate={{ opacity: 1, y: 0 }}
         className="text-center"
       >
-        <h1 className="text-9xl font-light text-bcg-dark tracking-tighter mb-4">404</h1>
-        <p className="text-2xl text-gray-600 font-light mb-12">The page you are looking for doesn't exist.</p>
+        <h1 className="text-9xl font-light text-text-primary tracking-tighter mb-4">404</h1>
+        <p className="text-2xl text-text-secondary font-light mb-12">The page you are looking for doesn't exist.</p>
         <button
           onClick={() => navigate('/')}
-          className="inline-flex items-center gap-2 px-8 py-4 bg-bcg-dark text-white font-bold uppercase tracking-widest text-sm rounded-sm hover:bg-bcg-forest transition-colors"
+          className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-text-on-dark font-bold uppercase tracking-widest text-sm rounded-sm hover:bg-primary-hover transition-colors"
         >
           <Home className="w-5 h-5" />
           Back to Home

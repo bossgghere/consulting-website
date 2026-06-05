@@ -38,11 +38,11 @@ const HomePage = () => (
 );
 
 export default function App() {
-  const { pathname } = useLocation();
+  const location = useLocation();
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [pathname]);
+  }, [location.key]);
 
   return (
     <div className="min-h-screen flex flex-col min-w-0 overflow-x-clip">
@@ -51,7 +51,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutUsPage />} />
-          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/contact" element={<ContactPage key={location.key} />} />
           <Route path="/staffing-solutions" element={<StaffingSolutionsPage />} />
           <Route path="/consulting-services" element={<ConsultingServicesPage />} />
           <Route path="/tech-services" element={<TechServicesPage />} />

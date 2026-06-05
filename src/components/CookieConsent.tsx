@@ -44,11 +44,11 @@ export const CookieConsent = () => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.5, duration: 0.3 }}
         onClick={() => setPanelOpen((o) => !o)}
-        className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-[100] w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-bcg-forest text-bcg-neon shadow-lg border-2 border-bcg-neon/30 flex items-center justify-center hover:scale-110 hover:shadow-xl focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-bcg-forest transition-all duration-200"
+        className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-[100] w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-primary text-accent shadow-lg border-2 border-accent/30 flex items-center justify-center hover:scale-110 hover:shadow-xl focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary transition-all duration-200"
       >
         <Cookie className="w-7 h-7" />
         {status === 'pending' && (
-          <span className="absolute -top-0.5 -right-0.5 w-3 h-3 rounded-full bg-bcg-neon animate-pulse" />
+          <span className="absolute -top-0.5 -right-0.5 w-3 h-3 rounded-full bg-accent animate-pulse" />
         )}
       </motion.button>
 
@@ -69,7 +69,7 @@ export const CookieConsent = () => {
               animate={{ opacity: 1, x: 0, y: 0 }}
               exit={{ opacity: 0, x: 24 }}
               transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-              className="fixed bottom-20 left-4 right-4 z-[100] w-auto max-w-md mx-auto sm:left-auto sm:right-6 sm:mx-0 sm:bottom-24 rounded-2xl bg-bcg-forest text-white shadow-2xl border border-bcg-neon/20 overflow-hidden"
+              className="fixed bottom-20 left-4 right-4 z-[100] w-auto max-w-md mx-auto sm:left-auto sm:right-6 sm:mx-0 sm:bottom-24 rounded-2xl bg-primary text-text-on-dark shadow-2xl border border-accent/20 overflow-hidden"
             >
               <motion.div
                 className="p-6 sm:p-8"
@@ -77,10 +77,10 @@ export const CookieConsent = () => {
                 animate="visible"
                 variants={staggerContainer}
               >
-                <div className="flex items-start justify-between gap-4 mb-4">
+                <div className="items-start justify-between gap-4 mb-4 flex">
                   <motion.div variants={staggerItem} className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-bcg-neon/20 flex items-center justify-center">
-                      <Cookie className="w-5 h-5 text-bcg-neon" />
+                    <div className="w-10 h-10 rounded-xl bg-accent/20 flex items-center justify-center">
+                      <Cookie className="w-5 h-5 text-accent" />
                     </div>
                     <h3 className="text-lg font-bold tracking-tight">Cookie preferences</h3>
                   </motion.div>
@@ -103,7 +103,7 @@ export const CookieConsent = () => {
                     onClick={() => save('accepted')}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="inline-flex items-center gap-2 px-5 py-2.5 bg-bcg-neon text-bcg-dark font-bold uppercase tracking-widest text-xs rounded-full hover:brightness-110 transition-all"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 bg-accent text-text-primary font-bold uppercase tracking-widest text-xs rounded-full hover:brightness-110 transition-all"
                   >
                     <Check className="w-4 h-4" /> Accept all
                   </motion.button>
@@ -119,9 +119,9 @@ export const CookieConsent = () => {
                 </motion.div>
                 <motion.p variants={staggerItem} className="text-[10px] text-white/60 mt-4">
                   See our{' '}
-                  <Link to="/privacy-policy" className="underline hover:text-bcg-neon transition-colors">Privacy Policy</Link>
+                  <Link to="/privacy-policy" className="underline hover:text-accent transition-colors">Privacy Policy</Link>
                   {' '}and{' '}
-                  <Link to="/cookie-policy" className="underline hover:text-bcg-neon transition-colors">Cookie Policy</Link>.
+                  <Link to="/cookie-policy" className="underline hover:text-accent transition-colors">Cookie Policy</Link>.
                 </motion.p>
               </motion.div>
             </motion.div>

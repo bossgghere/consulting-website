@@ -49,12 +49,12 @@ export const Hero = () => {
   };
 
   return (
-    <section className="bg-[#fdfcfb] pt-8 sm:pt-12 pb-12 sm:pb-16 px-4 sm:px-0 overflow-hidden">
+    <section className="bg-background-alt pt-8 sm:pt-12 pb-12 sm:pb-16 px-4 sm:px-0 overflow-hidden">
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
         <motion.div initial="hidden" animate="visible" variants={staggerContainer}>
           <motion.h1
             variants={staggerItem}
-            className="text-3xl sm:text-4xl md:text-5xl font-light text-bcg-dark mb-6 sm:mb-10 tracking-tight"
+            className="text-3xl sm:text-4xl md:text-5xl font-light text-text-primary mb-6 sm:mb-10 tracking-tight"
           >
             Nexora
           </motion.h1>
@@ -111,7 +111,7 @@ export const Hero = () => {
                     setCurrentIndex(index);
                   }}
                   className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
-                    index === currentIndex ? 'bg-bcg-neon w-6' : 'bg-white/40'
+                    index === currentIndex ? 'bg-accent w-6' : 'bg-white/40'
                   }`}
                   aria-label={`Go to slide ${index + 1}`}
                 />

@@ -39,7 +39,7 @@ export const Careers = () => {
           </motion.p>
           <Link
             to="/consulting-services"
-            className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-bcg-neon text-bcg-dark font-bold uppercase tracking-widest text-xs sm:text-sm rounded-sm hover:brightness-110 transition-all group text-left max-w-full"
+            className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-accent text-text-primary font-bold uppercase tracking-widest text-xs sm:text-sm rounded-sm hover:brightness-110 transition-all group text-left max-w-full"
           >
             LEARN MORE ABOUT OUR SERVICES
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -54,7 +54,7 @@ export const Careers = () => {
         transition={{ duration: 0.55, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
         className="absolute right-0 top-1/2 -translate-y-1/2 hidden lg:block pr-12 xl:pr-20"
       >
-         <div className="bg-white p-2 sm:p-4 shadow-2xl rotate-3">
+         <div className="bg-surface p-2 sm:p-4 shadow-2xl rotate-3">
             <img
               src="/images/shared/team-collaboration.webp"
               alt="Team collaboration"

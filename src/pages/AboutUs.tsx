@@ -1,10 +1,10 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { fadeUp, staggerContainer, staggerItem, viewPort } from '../motionPresets';
+import { fadeUp, staggerContainer, staggerItem, viewPort, easeOut } from '../motionPresets';
 
 const AboutUs = () => {
   return (
-    <div className="bg-[#fdfcfb] min-h-screen pt-20 sm:pt-24 pb-12 sm:pb-20">
+    <div className="bg-background-alt min-h-screen pt-20 sm:pt-24 pb-12 sm:pb-20">
       {/* Hero Section - Editorial & Dramatic */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 sm:mb-32 relative">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-8 items-end">
@@ -16,19 +16,19 @@ const AboutUs = () => {
           >
             <motion.span
               variants={staggerItem}
-              className="text-xs font-black uppercase tracking-[0.4em] text-bcg-forest mb-6 sm:mb-8 block"
+              className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-6 sm:mb-8 block"
             >
               WHO WE ARE
             </motion.span>
             <motion.h1
               variants={staggerItem}
-              className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl xl:text-[10rem] font-light text-bcg-dark mb-8 sm:mb-12 tracking-tighter leading-[0.85] sm:leading-[0.8]"
+              className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl xl:text-[10rem] font-light text-text-primary mb-8 sm:mb-12 tracking-tighter leading-[0.85] sm:leading-[0.8]"
             >
               About <br /> <span className="italic font-serif">Us</span>
             </motion.h1>
             <motion.p
               variants={staggerItem}
-              className="text-xl sm:text-2xl md:text-3xl text-gray-600 leading-relaxed font-light max-w-xl"
+              className="text-xl sm:text-2xl md:text-3xl text-text-secondary leading-relaxed font-light max-w-xl"
             >
               Nexora understands the customer's constraints about investing in IT and IT infra.
               We provide tailored services for all category of business demand.
@@ -48,9 +48,9 @@ const AboutUs = () => {
                 referrerPolicy="no-referrer"
               />
             </div>
-            <div className="absolute bottom-3 left-3 sm:-bottom-8 sm:-left-8 md:-bottom-12 md:-left-12 bg-bcg-neon p-6 sm:p-8 md:p-12 rounded-full shadow-2xl max-w-[min(100%-1.5rem,280px)] sm:max-w-none">
-              <p className="text-bcg-dark font-black text-2xl sm:text-4xl tracking-tighter">Global</p>
-              <p className="text-bcg-dark/60 text-[10px] uppercase tracking-widest font-bold">Presence</p>
+            <div className="absolute bottom-3 left-3 sm:-bottom-8 sm:-left-8 md:-bottom-12 md:-left-12 bg-accent p-6 sm:p-8 md:p-12 rounded-full shadow-2xl max-w-[min(100%-1.5rem,280px)] sm:max-w-none">
+              <p className="text-text-primary font-black text-2xl sm:text-4xl tracking-tighter">Global</p>
+              <p className="text-text-primary/60 text-[10px] uppercase tracking-widest font-bold">Presence</p>
             </div>
           </motion.div>
         </div>
@@ -59,7 +59,7 @@ const AboutUs = () => {
       {/* Values Section - Clean & Minimal */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 sm:mb-32">
         <div className="text-center mb-12 sm:mb-20">
-          <motion.h2 {...fadeUp()} className="text-4xl sm:text-5xl font-light text-bcg-dark tracking-tight">
+          <motion.h2 {...fadeUp()} className="text-4xl sm:text-5xl font-light text-text-primary tracking-tight">
             Our <span className="italic font-serif">Values</span>
           </motion.h2>
         </div>
@@ -76,13 +76,13 @@ const AboutUs = () => {
               viewport={{ once: true, margin: '-30px' }}
               transition={{ duration: 0.5, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
               whileHover={{ y: -4 }}
-              className="p-8 sm:p-12 bg-white rounded-[2rem] sm:rounded-[3rem] border border-gray-100 hover:shadow-xl transition-shadow duration-300 text-center group"
+              className="p-8 sm:p-12 bg-surface rounded-[2rem] sm:rounded-[3rem] border border-border-subtle hover:shadow-xl transition-shadow duration-300 text-center group"
             >
-              <div className="w-16 h-16 bg-bcg-forest text-bcg-neon rounded-full flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-16 h-16 bg-primary text-accent rounded-full flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform duration-300">
                 <span className="text-xl font-bold">{i + 1}</span>
               </div>
-              <h3 className="text-2xl font-bold text-bcg-dark mb-4 tracking-tight">{value.title}</h3>
-              <p className="text-gray-500 font-light leading-relaxed">{value.desc}</p>
+              <h3 className="text-2xl font-bold text-text-primary mb-4 tracking-tight">{value.title}</h3>
+              <p className="text-text-secondary font-light leading-relaxed">{value.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -113,10 +113,10 @@ const AboutUs = () => {
             transition={{ duration: 0.8 }}
             className="space-y-12"
           >
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-light text-bcg-dark tracking-tight leading-tight">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-light text-text-primary tracking-tight leading-tight">
               Your Competitive <br /> <span className="italic font-serif">Advantage</span>
             </h2>
-            <div className="space-y-6 sm:space-y-8 text-lg sm:text-xl text-gray-600 leading-relaxed font-light">
+            <div className="space-y-6 sm:space-y-8 text-lg sm:text-xl text-text-secondary leading-relaxed font-light">
               <motion.p {...fadeUp(0)}>
                 We have our own business entities established in nearly every country worldwide, 
                 which means that the legwork required for you to hire and manage international talent 
@@ -133,8 +133,8 @@ const AboutUs = () => {
       </section>
 
       {/* Unrivaled Combination Section - Dark & Immersive */}
-      <section className="bg-bcg-dark text-white py-20 sm:py-32 overflow-hidden relative">
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(0,69,51,0.2),transparent)] pointer-events-none" />
+      <section className="bg-primary text-text-on-dark py-20 sm:py-32 overflow-hidden relative">
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,var(--theme-accent-subtle),transparent)] pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 sm:gap-24 items-center">
             <motion.div
@@ -148,10 +148,10 @@ const AboutUs = () => {
                 variants={staggerItem}
                 className="text-4xl sm:text-5xl md:text-7xl font-light leading-[1.1] tracking-tight"
               >
-                Our people, expertise, and technology are all of the <span className="text-bcg-neon italic font-serif">highest calibers</span>, 
+                Our people, expertise, and technology are all of the <span className="text-accent italic font-serif">highest calibers</span>, 
                 but the combination is unrivaled.
               </motion.h2>
-              <motion.p variants={staggerItem} className="text-xl sm:text-2xl text-gray-400 font-light max-w-lg">
+              <motion.p variants={staggerItem} className="text-xl sm:text-2xl text-white/50 font-light max-w-lg">
                 We are in a league of our own, backed by our global entities.
               </motion.p>
             </motion.div>
@@ -159,7 +159,7 @@ const AboutUs = () => {
               initial={{ opacity: 0, scale: 0.98 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={viewPort}
-              transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.55, delay: 0.22, ease: easeOut }}
               className="relative aspect-video rounded-2xl sm:rounded-[3rem] overflow-hidden border-8 border-white/5 shadow-2xl"
             >
               <img

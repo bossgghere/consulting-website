@@ -6,8 +6,8 @@ import { staggerContainer, staggerItem } from '../motionPresets';
 
 export const About = () => {
   return (
-    <section className="relative py-12 sm:py-20 bg-bcg-forest overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,240,75,0.12),transparent)] pointer-events-none" aria-hidden />
+    <section className="relative py-12 sm:py-20 bg-primary overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,var(--theme-accent-subtle),transparent)] pointer-events-none" aria-hidden />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 items-center">
           <motion.div
@@ -19,16 +19,16 @@ export const About = () => {
           >
             <motion.span
               variants={staggerItem}
-              className="text-[10px] sm:text-xs font-black uppercase tracking-[0.3em] text-bcg-neon block"
+              className="text-[10px] sm:text-xs font-black uppercase tracking-[0.3em] text-accent block"
             >
               About Nexora
             </motion.span>
             <motion.h2
               variants={staggerItem}
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.25rem] font-light text-white leading-snug sm:leading-tight tracking-tight"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.25rem] font-light text-text-on-dark leading-snug sm:leading-tight tracking-tight"
             >
               As a top consulting firm, we help clients with{' '}
-              <span className="text-bcg-neon italic font-serif">total transformation</span>
+              <span className="text-accent italic font-serif">total transformation</span>
               —driving complex change, enabling organizations to grow, and delivering bottom-line impact.
             </motion.h2>
             <motion.p variants={staggerItem} className="home-prose-invert max-w-lg">
@@ -36,7 +36,7 @@ export const About = () => {
             </motion.p>
             <Link
               to="/about"
-              className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-bcg-neon text-bcg-dark font-bold uppercase tracking-widest text-xs sm:text-sm rounded-sm hover:brightness-110 transition-all group"
+              className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-accent text-text-primary font-bold uppercase tracking-widest text-xs sm:text-sm rounded-sm hover:brightness-110 transition-all group"
             >
               LEARN MORE
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
