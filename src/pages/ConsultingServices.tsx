@@ -1,14 +1,10 @@
 import React from 'react';
 import { motion } from 'motion/react';
+import { Link } from 'react-router-dom';
 import { CONSULTING_SERVICES, PROCESS_STEPS } from '../data/consultingServices';
-import type { ServiceSlug } from '../data/consultingServices';
 import { staggerContainer, staggerItem, viewPort } from '../motionPresets';
 
-interface ConsultingServicesProps {
-  onNavigateToService?: (slug: ServiceSlug) => void;
-}
-
-const ConsultingServices = ({ onNavigateToService }: ConsultingServicesProps) => {
+const ConsultingServices = () => {
   return (
     <div className="bg-[#fdfcfb] min-h-screen pt-20 sm:pt-24 pb-12 sm:pb-20">
       {/* Hero Section - Editorial Style */}
@@ -157,16 +153,12 @@ const ConsultingServices = ({ onNavigateToService }: ConsultingServicesProps) =>
                       >
                         {item.shortDescription}
                       </motion.p>
-                      <motion.button
-                        type="button"
-                        variants={staggerItem}
-                        onClick={() => onNavigateToService?.(item.slug)}
-                        whileHover={{ scale: 1.02 }}
-                        whileTap={{ scale: 0.98 }}
+                      <Link
+                        to={`/service/${item.slug}`}
                         className="inline-flex items-center self-start rounded-full border border-bcg-forest/20 bg-bcg-forest px-5 py-3 text-xs font-black uppercase tracking-[0.2em] text-white transition-colors hover:bg-bcg-dark hover:border-bcg-dark hover:shadow-lg"
                       >
                         View capability
-                      </motion.button>
+                      </Link>
                     </motion.div>
                   </div>
                 </motion.article>
@@ -206,13 +198,12 @@ const ConsultingServices = ({ onNavigateToService }: ConsultingServicesProps) =>
                       <p className="text-gray-400 font-light leading-relaxed text-sm sm:text-base mb-4">
                         {item.shortDescription}
                       </p>
-                      <button
-                        type="button"
-                        onClick={() => onNavigateToService?.(item.slug)}
+                      <Link
+                        to={`/service/${item.slug}`}
                         className="text-bcg-neon font-bold uppercase tracking-widest text-[11px] w-fit underline-offset-4 hover:underline"
                       >
                         Read more
-                      </button>
+                      </Link>
                     </div>
                   </motion.div>
                 ))}

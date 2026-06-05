@@ -1,13 +1,9 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
-import type { PageId } from '../App';
+import { Link } from 'react-router-dom';
 
-interface CTAProps {
-  onNavigate: (page: PageId) => void;
-}
-
-export const CTA = ({ onNavigate }: CTAProps) => {
+export const CTA = () => {
   return (
     <section className="bg-bcg-forest py-16 sm:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -24,16 +20,13 @@ export const CTA = ({ onNavigate }: CTAProps) => {
               Explore how we partner with leaders in business and society.
             </p>
           </div>
-          <motion.button
-            type="button"
-            onClick={() => onNavigate('about')}
-            className="flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-bcg-neon text-bcg-dark font-bold uppercase tracking-widest text-xs sm:text-sm rounded-sm hover:brightness-110 transition-all group shrink-0 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-bcg-forest"
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.97 }}
+          <Link
+            to="/about"
+            className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-bcg-neon text-bcg-dark font-bold uppercase tracking-widest text-xs sm:text-sm rounded-sm hover:brightness-110 transition-all group shrink-0 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-bcg-forest"
           >
             LEARN MORE
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </motion.button>
+          </Link>
         </motion.div>
       </div>
     </section>

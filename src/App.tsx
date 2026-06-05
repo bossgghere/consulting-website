@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { Insights } from './components/Insights';
@@ -19,62 +20,46 @@ import StaffingSolutionsPage from './pages/StaffingSolutions';
 import ConsultingServicesPage from './pages/ConsultingServices';
 import TechServicesPage from './pages/TechServices';
 import ServiceDetail from './pages/ServiceDetail';
-import type { ServiceSlug } from './data/consultingServices';
+import NotFound from './pages/NotFound';
 
-export type PageId = 'home' | 'about' | 'contact' | 'staffing' | 'consulting' | 'tech' | 'service';
+const HomePage = () => (
+  <>
+    <Hero />
+    <Insights />
+    <About />
+    <PressRelease />
+    <Careers />
+    <CTA />
+  </>
+);
 
 export default function App() {
-  const [currentPage, setCurrentPage] = useState<PageId>('home');
-  const [serviceSlug, setServiceSlug] = useState<ServiceSlug | null>(null);
+  const { pathname } = useLocation();
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [currentPage, serviceSlug]);
-
-  const handleNavigate = (page: PageId, slug?: ServiceSlug | null) => {
-    setCurrentPage(page);
-    setServiceSlug(slug ?? null);
-  };
-
-  const handleNavigateToService = (slug: ServiceSlug) => {
-    handleNavigate('service', slug);
-  };
+  }, [pathname]);
 
   return (
     <div className="min-h-screen flex flex-col min-w-0 overflow-x-clip">
-      <Navbar
-        onNavigate={handleNavigate}
-        currentPage={currentPage}
-        serviceSlug={serviceSlug}
-      />
+      <Navbar />
       <main className="flex-grow min-w-0">
-        {currentPage === 'home' ? (
-          <>
-            <Hero />
-            <Insights />
-            <About onNavigate={handleNavigate} />
-            <PressRelease onNavigate={handleNavigate} />
-            <Careers onNavigate={handleNavigate} />
-            <CTA onNavigate={handleNavigate} />
-          </>
-        ) : currentPage === 'about' ? (
-          <AboutUsPage />
-        ) : currentPage === 'contact' ? (
-          <ContactPage />
-        ) : currentPage === 'staffing' ? (
-          <StaffingSolutionsPage />
-        ) : currentPage === 'consulting' ? (
-          <ConsultingServicesPage onNavigateToService={handleNavigateToService} />
-        ) : currentPage === 'service' && serviceSlug ? (
-          <ServiceDetail
-            slug={serviceSlug}
-            onBack={() => handleNavigate('consulting')}
-          />
-        ) : (
-          <TechServicesPage />
-        )}
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutUsPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/staffing-solutions" element={<StaffingSolutionsPage />} />
+          <Route path="/consulting-services" element={<ConsultingServicesPage />} />
+          <Route path="/tech-services" element={<TechServicesPage />} />
+          <Route path="/service/:slug" element={<ServiceDetail />} />
+          {/* Aliases for convenience if needed */}
+          <Route path="/insights" element={<Navigate to="/" replace />} />
+          <Route path="/careers" element={<Navigate to="/" replace />} />
+          <Route path="/press" element={<Navigate to="/" replace />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
       </main>
-      <Footer onNavigate={handleNavigate} />
+      <Footer />
       <CookieConsent />
     </div>
   );

@@ -1,16 +1,13 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { ArrowLeft } from 'lucide-react';
+import { Link, useParams } from 'react-router-dom';
 import { getServiceBySlug } from '../data/consultingServices';
 import type { ServiceSlug } from '../data/consultingServices';
 
-interface ServiceDetailProps {
-  slug: ServiceSlug;
-  onBack: () => void;
-}
-
-const ServiceDetail = ({ slug, onBack }: ServiceDetailProps) => {
-  const service = getServiceBySlug(slug);
+const ServiceDetail = () => {
+  const { slug } = useParams<{ slug: string }>();
+  const service = getServiceBySlug(slug as ServiceSlug);
 
   if (!service) {
     return (
@@ -22,37 +19,30 @@ const ServiceDetail = ({ slug, onBack }: ServiceDetailProps) => {
           className="text-center"
         >
           <h1 className="text-2xl font-bold text-bcg-dark mb-4">Page not found</h1>
-          <motion.button
-            type="button"
-            onClick={onBack}
-            whileHover={{ x: -2 }}
-            whileTap={{ scale: 0.98 }}
+          <Link
+            to="/consulting-services"
             className="text-bcg-forest font-bold uppercase tracking-widest flex items-center gap-2 mx-auto"
           >
             <ArrowLeft className="w-4 h-4" /> Back to Consulting
-          </motion.button>
+          </Link>
         </motion.div>
       </div>
     );
   }
 
-  const isProcess = slug.startsWith('process-');
+  const isProcess = slug?.startsWith('process-');
 
   return (
     <div className="bg-[#fdfcfb] min-h-screen pt-20 sm:pt-24 pb-12 sm:pb-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Back link */}
-        <motion.button
-          type="button"
-          initial={{ opacity: 0, x: -10 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.4 }}
-          onClick={onBack}
+        <Link
+          to="/consulting-services"
           className="flex items-center gap-2 text-bcg-forest font-black uppercase tracking-widest text-[11px] mb-8 sm:mb-12 hover:gap-4 transition-all group"
         >
           <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
           Back to {isProcess ? 'Process' : 'Services'}
-        </motion.button>
+        </Link>
 
         {/* Hero image - one per page */}
         <motion.div
@@ -108,15 +98,12 @@ const ServiceDetail = ({ slug, onBack }: ServiceDetailProps) => {
           transition={{ delay: 0.5 }}
           className="mt-10 sm:mt-14"
         >
-          <motion.button
-            type="button"
-            onClick={onBack}
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
+          <Link
+            to="/consulting-services"
             className="inline-flex items-center gap-2 px-6 py-3 bg-bcg-forest text-bcg-neon font-bold uppercase tracking-widest text-xs rounded-full hover:bg-bcg-dark transition-colors"
           >
             <ArrowLeft className="w-4 h-4" /> All services
-          </motion.button>
+          </Link>
         </motion.div>
       </div>
     </div>

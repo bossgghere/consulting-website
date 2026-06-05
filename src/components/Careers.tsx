@@ -1,14 +1,10 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
-import type { PageId } from '../App';
+import { Link } from 'react-router-dom';
 import { staggerContainer, staggerItem } from '../motionPresets';
 
-interface CareersProps {
-  onNavigate: (page: PageId) => void;
-}
-
-export const Careers = ({ onNavigate }: CareersProps) => {
+export const Careers = () => {
   return (
     <section className="relative min-h-[400px] sm:h-[500px] md:h-[600px] flex items-center overflow-hidden">
       <div className="absolute inset-0 z-0">
@@ -41,17 +37,13 @@ export const Careers = ({ onNavigate }: CareersProps) => {
           <motion.p variants={staggerItem} className="home-prose-invert mb-6 sm:mb-8 max-w-xl">
             We are far beyond another staffing organization. Try our highly approachable and result-oriented consulting service at your Best!
           </motion.p>
-          <motion.button
-            type="button"
-            variants={staggerItem}
-            onClick={() => onNavigate('consulting')}
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="flex flex-wrap items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-bcg-neon text-bcg-dark font-bold uppercase tracking-widest text-xs sm:text-sm rounded-sm hover:brightness-110 transition-all group text-left max-w-full"
+          <Link
+            to="/consulting-services"
+            className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-bcg-neon text-bcg-dark font-bold uppercase tracking-widest text-xs sm:text-sm rounded-sm hover:brightness-110 transition-all group text-left max-w-full"
           >
             LEARN MORE ABOUT OUR SERVICES
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </motion.button>
+          </Link>
         </motion.div>
       </div>
 

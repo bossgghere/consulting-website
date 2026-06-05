@@ -1,14 +1,10 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
-import type { PageId } from '../App';
+import { Link } from 'react-router-dom';
 import { staggerContainer, staggerItem } from '../motionPresets';
 
-interface AboutProps {
-  onNavigate: (page: PageId) => void;
-}
-
-export const About = ({ onNavigate }: AboutProps) => {
+export const About = () => {
   return (
     <section className="relative py-12 sm:py-20 bg-bcg-forest overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,240,75,0.12),transparent)] pointer-events-none" aria-hidden />
@@ -38,17 +34,13 @@ export const About = ({ onNavigate }: AboutProps) => {
             <motion.p variants={staggerItem} className="home-prose-invert max-w-lg">
               We are in a league of our own, backed by our global entities—strategy, delivery, and outcomes aligned with how you operate.
             </motion.p>
-            <motion.button
-              type="button"
-              variants={staggerItem}
-              onClick={() => onNavigate('about')}
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-bcg-neon text-bcg-dark font-bold uppercase tracking-widest text-xs sm:text-sm rounded-sm hover:brightness-110 transition-all group"
+            <Link
+              to="/about"
+              className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-bcg-neon text-bcg-dark font-bold uppercase tracking-widest text-xs sm:text-sm rounded-sm hover:brightness-110 transition-all group"
             >
               LEARN MORE
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </motion.button>
+            </Link>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, x: 20 }}

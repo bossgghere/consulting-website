@@ -1,29 +1,20 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import type { PageId } from '../App';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 
-interface NavbarProps {
-  onNavigate: (page: PageId, slug?: import('../data/consultingServices').ServiceSlug | null) => void;
-  currentPage: PageId;
-  serviceSlug?: string | null;
-}
-
-const NAV_LINKS: { page: PageId; label: string }[] = [
-  { page: 'home', label: 'Home' },
-  { page: 'consulting', label: 'Consulting' },
-  { page: 'tech', label: 'Tech Services' },
-  { page: 'about', label: 'About Us' },
+const NAV_LINKS = [
+  { path: '/', label: 'Home' },
+  { path: '/consulting-services', label: 'Consulting' },
+  { path: '/tech-services', label: 'Tech Services' },
+  { path: '/about', label: 'About Us' },
 ];
 
-export const Navbar = ({ onNavigate, currentPage, serviceSlug }: NavbarProps) => {
+export const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const isConsultingActive = currentPage === 'consulting' || currentPage === 'service';
+  const { pathname } = useLocation();
 
-  const handleNav = (page: PageId) => {
-    onNavigate(page);
-    setMobileOpen(false);
-  };
+  const isConsultingActive = pathname === '/consulting-services' || pathname.startsWith('/service/');
 
   return (
     <nav className="sticky top-0 z-50 bg-[#fdfcfb]/95 backdrop-blur-sm py-3 sm:py-4 px-2 sm:px-0">
@@ -34,48 +25,33 @@ export const Navbar = ({ onNavigate, currentPage, serviceSlug }: NavbarProps) =>
           transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
           className="flex flex-wrap justify-start items-center gap-2 sm:gap-4 min-w-0 w-full"
         >
-          {/* Logo - always goes to home */}
-          <motion.div
-            className="flex items-center justify-center bg-white border border-gray-200 rounded-xl sm:rounded-2xl px-4 sm:px-6 py-2 sm:py-3 shadow-sm min-w-[120px] sm:min-w-[160px] cursor-pointer"
-            onClick={() => onNavigate('home')}
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            transition={{ type: 'spring', stiffness: 400, damping: 17 }}
-          >
-            <span className="text-lg sm:text-2xl font-bold tracking-tighter text-bcg-dark">NEXORA</span>
-          </motion.div>
+          {/* Logo */}
+          <Link to="/">
+            <motion.div
+              className="flex items-center justify-center bg-white border border-gray-200 rounded-xl sm:rounded-2xl px-4 sm:px-6 py-2 sm:py-3 shadow-sm min-w-[120px] sm:min-w-[160px] cursor-pointer"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+            >
+              <span className="text-lg sm:text-2xl font-bold tracking-tighter text-bcg-dark">NEXORA</span>
+            </motion.div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center justify-start bg-white border border-gray-200 rounded-xl sm:rounded-2xl px-6 sm:px-8 py-2 sm:py-3 shadow-sm">
             <div className="font-nav flex flex-wrap items-center gap-3 sm:gap-6 text-sm font-semibold uppercase tracking-widest text-bcg-dark">
-              <button
-                type="button"
-                onClick={() => onNavigate('home')}
-                className={`${currentPage === 'home' ? 'bg-[#D1FAE5] text-bcg-forest' : 'text-bcg-dark hover:text-bcg-forest'} px-3 sm:px-4 py-2 rounded-lg transition-colors duration-200 active:scale-[0.98]`}
-              >
-                Home
-              </button>
-              <button
-                type="button"
-                onClick={() => onNavigate('consulting')}
-                className={`${isConsultingActive ? 'bg-[#D1FAE5] text-bcg-forest' : 'text-bcg-dark hover:text-bcg-forest'} px-3 sm:px-4 py-2 rounded-lg transition-colors duration-200 active:scale-[0.98]`}
-              >
-                Consulting
-              </button>
-              <button
-                type="button"
-                onClick={() => onNavigate('tech')}
-                className={`${currentPage === 'tech' ? 'bg-[#D1FAE5] text-bcg-forest' : 'text-bcg-dark hover:text-bcg-forest'} px-3 sm:px-4 py-2 rounded-lg transition-colors duration-200 active:scale-[0.98]`}
-              >
-                Tech Services
-              </button>
-              <button
-                type="button"
-                onClick={() => onNavigate('about')}
-                className={`${currentPage === 'about' ? 'bg-[#D1FAE5] text-bcg-forest' : 'text-bcg-dark hover:text-bcg-forest'} px-3 sm:px-4 py-2 rounded-lg transition-colors duration-200 active:scale-[0.98]`}
-              >
-                About Us
-              </button>
+              {NAV_LINKS.map(({ path, label }) => {
+                const isActive = path === '/consulting-services' ? isConsultingActive : pathname === path;
+                return (
+                  <NavLink
+                    key={path}
+                    to={path}
+                    className={`${isActive ? 'bg-[#D1FAE5] text-bcg-forest' : 'text-bcg-dark hover:text-bcg-forest'} px-3 sm:px-4 py-2 rounded-lg transition-colors duration-200 active:scale-[0.98]`}
+                  >
+                    {label}
+                  </NavLink>
+                );
+              })}
             </div>
           </div>
 
@@ -93,12 +69,12 @@ export const Navbar = ({ onNavigate, currentPage, serviceSlug }: NavbarProps) =>
 
           {/* Contact Section */}
           <div className="flex items-center justify-center bg-white border border-gray-200 rounded-xl sm:rounded-2xl px-4 sm:px-6 py-2 sm:py-3 shadow-sm min-w-[100px] sm:min-w-[160px] ml-auto">
-            <button
-              onClick={() => onNavigate('contact')}
-              className={`text-xs sm:text-sm font-bold uppercase tracking-widest whitespace-nowrap transition-colors ${currentPage === 'contact' ? 'text-bcg-forest' : 'text-bcg-dark hover:text-bcg-forest'}`}
+            <Link
+              to="/contact"
+              className={`text-xs sm:text-sm font-bold uppercase tracking-widest whitespace-nowrap transition-colors ${pathname === '/contact' ? 'text-bcg-forest' : 'text-bcg-dark hover:text-bcg-forest'}`}
             >
               CONTACT US
-            </button>
+            </Link>
           </div>
         </motion.div>
 
@@ -113,22 +89,29 @@ export const Navbar = ({ onNavigate, currentPage, serviceSlug }: NavbarProps) =>
               className="lg:hidden overflow-hidden"
             >
               <div className="pt-3 pb-2 flex flex-col gap-1 bg-white border border-gray-200 rounded-xl mt-2 shadow-lg px-4 py-3">
-                {NAV_LINKS.map(({ page, label }, i) => (
-                  <motion.button
-                    key={page}
-                    initial={{ opacity: 0, x: -8 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.04 }}
-                    onClick={() => handleNav(page)}
-                    className={`font-nav text-left px-4 py-3 rounded-lg text-sm font-semibold uppercase tracking-widest transition-colors active:scale-[0.98] ${
-                      (page === 'consulting' ? isConsultingActive : currentPage === page)
-                        ? 'bg-[#D1FAE5] text-bcg-forest'
-                        : 'text-bcg-dark hover:bg-gray-100 hover:text-bcg-forest'
-                    }`}
-                  >
-                    {label}
-                  </motion.button>
-                ))}
+                {NAV_LINKS.map(({ path, label }, i) => {
+                  const isActive = path === '/consulting-services' ? isConsultingActive : pathname === path;
+                  return (
+                    <motion.div
+                      key={path}
+                      initial={{ opacity: 0, x: -8 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: i * 0.04 }}
+                    >
+                      <Link
+                        to={path}
+                        onClick={() => setMobileOpen(false)}
+                        className={`block font-nav text-left px-4 py-3 rounded-lg text-sm font-semibold uppercase tracking-widest transition-colors active:scale-[0.98] ${
+                          isActive
+                            ? 'bg-[#D1FAE5] text-bcg-forest'
+                            : 'text-bcg-dark hover:bg-gray-100 hover:text-bcg-forest'
+                        }`}
+                      >
+                        {label}
+                      </Link>
+                    </motion.div>
+                  );
+                })}
               </div>
             </motion.div>
           )}
