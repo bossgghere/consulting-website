@@ -65,7 +65,7 @@ const StaffingSolutions = () => {
               className="rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl grayscale hover:grayscale-0 transition-all duration-700"
             >
               <img
-                src="/images/staffing-solutions/staffing-meeting.webp"
+                src="/images/shared/team-meeting.webp"
                 alt="Recruitment Team"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"

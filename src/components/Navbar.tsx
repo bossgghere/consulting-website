@@ -17,8 +17,11 @@ export const Navbar = () => {
   const isConsultingActive = pathname === '/consulting-services' || pathname.startsWith('/service/');
 
   return (
-    <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm py-3 sm:py-4 px-2 sm:px-0 border-b border-border-subtle">
-      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+    <nav className="sticky top-0 z-50 bg-background/90 backdrop-blur-md py-3 sm:py-4 px-2 sm:px-0 border-b border-border-subtle shadow-[0_1px_20px_rgba(0,0,0,0.02)] transition-colors duration-500">
+      {/* Dynamic Accent Glow */}
+      <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-accent/30 to-transparent pointer-events-none" />
+      
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}

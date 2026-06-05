@@ -49,8 +49,48 @@ export const Hero = () => {
   };
 
   return (
-    <section className="bg-background-alt pt-8 sm:pt-12 pb-12 sm:pb-16 px-4 sm:px-0 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+    <section className="relative bg-background-alt pt-8 sm:pt-12 pb-12 sm:pb-16 px-4 sm:px-0 overflow-hidden">
+      {/* Background Decorative Elements */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        {/* Animated Blobs */}
+        <motion.div
+          animate={{
+            x: [0, 40, 0],
+            y: [0, -30, 0],
+            scale: [1, 1.1, 1],
+          }}
+          transition={{
+            duration: 15,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+          className="absolute -top-1/4 -left-1/4 w-1/2 h-1/2 rounded-full bg-accent/5 blur-[120px]"
+        />
+        <motion.div
+          animate={{
+            x: [0, -50, 0],
+            y: [0, 40, 0],
+            scale: [1, 1.2, 1],
+          }}
+          transition={{
+            duration: 18,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+          className="absolute -bottom-1/4 -right-1/4 w-1/2 h-1/2 rounded-full bg-primary/5 blur-[120px]"
+        />
+
+        {/* Subtle Grid Pattern */}
+        <div 
+          className="absolute inset-0 opacity-[0.03]" 
+          style={{ 
+            backgroundImage: `radial-gradient(var(--theme-primary) 0.5px, transparent 0.5px)`, 
+            backgroundSize: '32px 32px' 
+          }} 
+        />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 relative z-10">
         <motion.div initial="hidden" animate="visible" variants={staggerContainer}>
           <motion.h1
             variants={staggerItem}
