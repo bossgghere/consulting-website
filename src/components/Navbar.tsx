@@ -17,39 +17,46 @@ export const Navbar = () => {
   const isConsultingActive = pathname === '/consulting-services' || pathname.startsWith('/service/');
 
   return (
-    <nav className="sticky top-0 z-50 bg-background/90 backdrop-blur-md py-3 sm:py-4 px-2 sm:px-0 border-b border-border-subtle shadow-[0_1px_20px_rgba(0,0,0,0.02)] transition-colors duration-500">
-      {/* Dynamic Accent Glow */}
-      <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-accent/30 to-transparent pointer-events-none" />
+    <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-xl border-b border-primary/10 transition-colors duration-500">
+      {/* Executive Tint Overlay */}
+      <div className="absolute inset-0 bg-primary/[0.03] pointer-events-none" />
       
-      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 relative z-10">
+      {/* Accent Glow Rail (Bottom) */}
+      <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-accent/20 to-transparent pointer-events-none" />
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: -8 }}
+          initial={{ opacity: 0, y: -4 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          className="flex flex-wrap justify-start items-center gap-2 sm:gap-4 min-w-0 w-full"
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          className="flex justify-between items-center h-16 sm:h-20"
         >
-          {/* Logo */}
-          <Link to="/">
-            <motion.div
-              className="flex items-center justify-center bg-surface border border-border-subtle rounded-xl sm:rounded-2xl px-4 sm:px-6 py-2 sm:py-3 shadow-sm min-w-[120px] sm:min-w-[160px] cursor-pointer"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              transition={{ type: 'spring', stiffness: 400, damping: 17 }}
-            >
-              <span className="text-lg sm:text-2xl font-bold tracking-tighter text-text-primary">NEXORA</span>
-            </motion.div>
-          </Link>
+          {/* Logo Section with Accent Rail */}
+          <div className="flex items-center gap-4 sm:gap-6">
+            {/* Architectural Accent Rail */}
+            <div className="w-[3px] h-6 bg-accent rounded-full hidden sm:block" />
+            
+            <Link to="/" className="group">
+              <span className="text-xl sm:text-2xl font-black tracking-tighter text-text-primary group-hover:text-primary transition-colors">
+                NEXORA
+              </span>
+            </Link>
+          </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center justify-start bg-surface border border-border-subtle rounded-xl sm:rounded-2xl px-6 sm:px-8 py-2 sm:py-3 shadow-sm">
-            <div className="font-nav flex flex-wrap items-center gap-3 sm:gap-6 text-sm font-semibold uppercase tracking-widest text-text-primary">
+          {/* Desktop Navigation (Unified) */}
+          <div className="hidden lg:flex items-center gap-2">
+            <div className="font-nav flex items-center gap-1 text-[11px] font-black uppercase tracking-[0.2em] text-text-primary">
               {NAV_LINKS.map(({ path, label }) => {
                 const isActive = path === '/consulting-services' ? isConsultingActive : pathname === path;
                 return (
                   <NavLink
                     key={path}
                     to={path}
-                    className={`${isActive ? 'bg-nav-active text-primary' : 'text-text-primary hover:text-primary'} px-3 sm:px-4 py-2 rounded-lg transition-colors duration-200 active:scale-[0.98]`}
+                    className={`${
+                      isActive 
+                        ? 'text-primary bg-primary/5 shadow-[inset_0_0_0_1px_rgba(var(--theme-primary-rgb),0.1)]' 
+                        : 'text-text-secondary hover:text-primary hover:bg-primary/5'
+                    } px-5 py-2 rounded-sm transition-all duration-300`}
                   >
                     {label}
                   </NavLink>
@@ -58,40 +65,42 @@ export const Navbar = () => {
             </div>
           </div>
 
-          {/* Mobile menu toggle */}
-          <div className="lg:hidden flex items-center gap-2">
+          {/* Contact Section (Executive Action) */}
+          <div className="flex items-center gap-4 sm:gap-6">
+            <Link
+              to="/contact"
+              className={`hidden sm:block text-[11px] font-black uppercase tracking-[0.25em] px-6 py-3 border border-primary/10 rounded-sm transition-all duration-300 ${
+                pathname === '/contact' 
+                  ? 'bg-primary text-text-on-dark shadow-lg' 
+                  : 'text-text-primary hover:bg-primary/5 hover:border-primary/20'
+              }`}
+            >
+              Contact Us
+            </Link>
+
+            {/* Mobile menu toggle */}
             <button
               type="button"
               onClick={() => setMobileOpen((o) => !o)}
-              className="flex items-center justify-center bg-surface border border-border-subtle rounded-xl px-4 py-2.5 shadow-sm text-text-secondary"
+              className="lg:hidden p-2 text-text-primary hover:bg-primary/5 rounded-sm transition-colors"
               aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
             >
               {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
-
-          {/* Contact Section */}
-          <div className="flex items-center justify-center bg-surface border border-border-subtle rounded-xl sm:rounded-2xl px-4 sm:px-6 py-2 sm:py-3 shadow-sm min-w-[100px] sm:min-w-[160px] ml-auto">
-            <Link
-              to="/contact"
-              className={`text-xs sm:text-sm font-bold uppercase tracking-widest whitespace-nowrap transition-colors ${pathname === '/contact' ? 'text-primary' : 'text-text-primary hover:text-primary'}`}
-            >
-              CONTACT US
-            </Link>
-          </div>
         </motion.div>
 
-        {/* Mobile dropdown */}
+        {/* Mobile dropdown (Themed) */}
         <AnimatePresence>
           {mobileOpen && (
             <motion.div
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-              className="lg:hidden overflow-hidden"
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              className="lg:hidden overflow-hidden border-t border-primary/5"
             >
-              <div className="pt-3 pb-2 flex flex-col gap-1 bg-surface border border-border-subtle rounded-xl mt-2 shadow-lg px-4 py-3">
+              <div className="py-6 flex flex-col gap-2">
                 {NAV_LINKS.map(({ path, label }, i) => {
                   const isActive = path === '/consulting-services' ? isConsultingActive : pathname === path;
                   return (
@@ -99,15 +108,15 @@ export const Navbar = () => {
                       key={path}
                       initial={{ opacity: 0, x: -8 }}
                       animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: i * 0.04 }}
+                      transition={{ delay: i * 0.05 }}
                     >
                       <Link
                         to={path}
                         onClick={() => setMobileOpen(false)}
-                        className={`block font-nav text-left px-4 py-3 rounded-lg text-sm font-semibold uppercase tracking-widest transition-colors active:scale-[0.98] ${
+                        className={`block font-nav text-left px-4 py-4 rounded-sm text-xs font-black uppercase tracking-[0.2em] transition-all ${
                           isActive
-                            ? 'bg-nav-active text-primary'
-                            : 'text-text-primary hover:bg-background-alt hover:text-primary'
+                            ? 'bg-primary text-text-on-dark pl-6'
+                            : 'text-text-primary hover:bg-primary/5 hover:pl-6'
                         }`}
                       >
                         {label}
@@ -115,6 +124,13 @@ export const Navbar = () => {
                     </motion.div>
                   );
                 })}
+                <Link
+                  to="/contact"
+                  onClick={() => setMobileOpen(false)}
+                  className="mt-4 block w-full text-center py-4 bg-accent text-text-primary font-black uppercase tracking-[0.2em] text-[10px] rounded-sm"
+                >
+                  Start a Conversation
+                </Link>
               </div>
             </motion.div>
           )}

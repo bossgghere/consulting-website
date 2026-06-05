@@ -47,7 +47,7 @@ const ConsultingServices = () => {
             <img
               src="/images/shared/team-meeting.webp"
               alt="Consulting strategy"
-              className="w-full h-full object-cover rounded-full grayscale hover:grayscale-0 transition-all duration-1000 shadow-2xl"
+              className="w-full h-full object-cover rounded-full transition-all duration-1000 shadow-2xl"
               referrerPolicy="no-referrer"
             />
           </motion.div>
@@ -214,7 +214,7 @@ const ConsultingServices = () => {
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                className="aspect-[4/5] rounded-2xl sm:rounded-[3rem] overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000 shadow-2xl"
+                className="aspect-[4/5] rounded-2xl sm:rounded-[3rem] overflow-hidden transition-all duration-1000 shadow-2xl"
               >
                 <img
                   src="/images/shared/team-collaboration.webp"

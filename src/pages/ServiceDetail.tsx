@@ -49,7 +49,7 @@ const ServiceDetail = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="aspect-[21/10] sm:aspect-[3/1] rounded-2xl sm:rounded-[3rem] overflow-hidden shadow-2xl mb-8 sm:mb-12 grayscale hover:grayscale-0 transition-all duration-700 group"
+          className="aspect-[21/10] sm:aspect-[3/1] rounded-2xl sm:rounded-[3rem] overflow-hidden shadow-2xl mb-8 sm:mb-12 transition-all duration-700 group"
         >
           <motion.img
             src={service.imageUrl}

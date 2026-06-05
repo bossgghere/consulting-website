@@ -104,7 +104,7 @@ export const Insights = () => {
               className="order-2 lg:order-1"
             >
               <motion.div
-                className="aspect-video rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl grayscale hover:grayscale-0 transition-all duration-700"
+                className="aspect-video rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl transition-all duration-700"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >
@@ -127,24 +127,23 @@ export const Insights = () => {
               <span className="text-[10px] font-black uppercase tracking-widest text-primary mb-3 block">MANAGED SERVICES</span>
               <h2 className="text-3xl sm:text-4xl font-light text-text-primary mb-3">IT Support</h2>
               <h3 className="text-base sm:text-lg font-light leading-relaxed text-text-secondary mb-5 sm:mb-6 italic">
-                Flourish business with managed IT solutions and services
+                Managed solutions for business resilience.
               </h3>
 
               <p className="text-base sm:text-lg font-light leading-relaxed text-text-secondary mb-8 max-w-xl">
-                We at Nexora handle all security, and IT monitoring for you. You will know your frameworks are
-                persuasive each and every day. Access quality technical support rapidly. We keep up with definite
-                documentation and analysis of your frameworks, and meet your expectations to stay up with the latest.
+                We handle security and monitoring so you can focus on growth. Access rapid technical support 
+                backed by proactive system maintenance and documentation.
               </p>
 
               <div className="space-y-6">
-                <h4 className="text-sm font-bold uppercase tracking-widest text-text-primary">Nexora Offers -</h4>
+                <h4 className="text-sm font-bold uppercase tracking-widest text-text-primary">Our Solutions</h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {[
-                    'Server and organization support',
+                    'Server & Network Management',
                     'Managed IT Services',
-                    'Individual User Support',
-                    'Customized business IT Solutions',
-                    'Other security and Back-up',
+                    'User Support & Help Desk',
+                    'Custom IT Solutions',
+                    'Security & Cloud Backup',
                   ].map((text, i) => (
                     <motion.div
                       key={text}

@@ -124,7 +124,7 @@ const ContactPage = () => {
 
             <motion.div {...fadeUp(0.15)} className="mt-12 sm:mt-20 relative group">
               <div className="absolute inset-0 bg-primary/20 rounded-2xl sm:rounded-[3rem] blur-2xl group-hover:blur-3xl transition-all" />
-              <div className="relative rounded-2xl sm:rounded-[3rem] overflow-hidden border-4 sm:border-8 border-surface shadow-2xl grayscale hover:grayscale-0 transition-all duration-1000">
+              <div className="relative rounded-2xl sm:rounded-[3rem] overflow-hidden border-4 sm:border-8 border-surface shadow-2xl transition-all duration-1000">
                 <img
                   src="/images/shared/office-modern.webp"
                   alt="London Office"

@@ -62,7 +62,7 @@ const StaffingSolutions = () => {
           <div className="grid grid-cols-1 gap-8">
             <motion.div
               {...fadeUp(0)}
-              className="rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl grayscale hover:grayscale-0 transition-all duration-700"
+              className="rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl transition-all duration-700"
             >
               <img
                 src="/images/shared/team-meeting.webp"
@@ -73,7 +73,7 @@ const StaffingSolutions = () => {
             </motion.div>
             <motion.div
               {...fadeUp(0.1)}
-              className="rounded-xl sm:rounded-2xl overflow-hidden shadow-xl grayscale hover:grayscale-0 transition-all duration-700"
+              className="rounded-xl sm:rounded-2xl overflow-hidden shadow-xl transition-all duration-700"
             >
               <img
                 src="/images/shared/team-collaboration.webp"

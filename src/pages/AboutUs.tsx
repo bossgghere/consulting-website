@@ -40,7 +40,7 @@ const AboutUs = () => {
             transition={{ duration: 1, delay: 0.2 }}
             className="lg:col-span-5 relative max-w-md mx-auto lg:max-w-none"
           >
-            <div className="aspect-[3/4] rounded-[3rem] sm:rounded-[5rem] overflow-hidden shadow-2xl grayscale hover:grayscale-0 transition-all duration-1000">
+            <div className="aspect-[3/4] rounded-[3rem] sm:rounded-[5rem] overflow-hidden shadow-2xl transition-all duration-1000">
               <img
                 src="/images/shared/team-collaboration.webp"
                 alt="About Nexora"
@@ -97,7 +97,7 @@ const AboutUs = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="aspect-square rounded-[3rem] sm:rounded-[4rem] overflow-hidden shadow-2xl grayscale hover:grayscale-0 transition-all duration-1000">
+            <div className="aspect-square rounded-[3rem] sm:rounded-[4rem] overflow-hidden shadow-2xl transition-all duration-1000">
               <img
                 src="/images/shared/team-meeting.webp"
                 alt="Competitive Advantage"

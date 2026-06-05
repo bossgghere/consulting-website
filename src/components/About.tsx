@@ -46,13 +46,13 @@ export const About = () => {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-40px' }}
-            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.55, delay: 0.22, ease: [0.22, 1, 0.36, 1] }}
             whileHover={{ scale: 1.01 }}
             className="relative"
           >
             <img
-              src="/images/shared/office-modern.webp"
-              alt="Office"
+              src="/images/shared/team-meeting.webp"
+              alt="Nexora Strategic Team"
               className="w-full h-full object-cover rounded-sm shadow-xl max-h-[400px] lg:max-h-none lg:aspect-auto"
               referrerPolicy="no-referrer"
             />

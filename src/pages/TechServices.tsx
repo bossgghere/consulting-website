@@ -44,7 +44,7 @@ const TechServicesPage = () => {
           >
             <div className="relative w-full max-w-lg mx-auto lg:max-w-none lg:pl-4 xl:pl-8 pb-4 sm:pb-0">
               {/* Primary — engineering / collaboration */}
-              <div className="aspect-[4/5] max-w-md mx-auto lg:max-w-none rounded-[2rem] sm:rounded-[3rem] lg:rounded-[4rem] overflow-hidden shadow-2xl grayscale hover:grayscale-0 transition-all duration-1000">
+              <div className="aspect-[4/5] max-w-md mx-auto lg:max-w-none rounded-[2rem] sm:rounded-[3rem] lg:rounded-[4rem] overflow-hidden shadow-2xl transition-all duration-1000">
                 <img
                   src="/images/shared/application-development.webp"
                   alt="Engineers collaborating on technology solutions"
@@ -145,7 +145,7 @@ const TechServicesPage = () => {
               transition={{ duration: 0.8 }}
               className="order-2 lg:order-1 relative min-w-0"
             >
-              <div className="aspect-video rounded-2xl sm:rounded-[3rem] overflow-hidden shadow-2xl grayscale hover:grayscale-0 transition-all duration-1000">
+              <div className="aspect-video rounded-2xl sm:rounded-[3rem] overflow-hidden shadow-2xl transition-all duration-1000">
                 <img 
                   src="/images/consulting-services/tech-support.jpg" 
                   alt="IT Support" 
