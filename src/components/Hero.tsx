@@ -4,11 +4,12 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { staggerContainer, staggerItem } from '../motionPresets';
 
 const HERO_IMAGES = [
-  '/images/home/hero-1.webp',
-  '/images/home/hero-2.webp',
-  '/images/home/hero-3.webp',
-  '/images/home/hero-4.webp',
-  '/images/home/hero-5.webp',
+  '/hero-images/hero-1.webp',
+  '/hero-images/hero-2.webp',
+  '/hero-images/hero-3.jpg',
+  '/hero-images/hero-4.jpg',
+  '/hero-images/hero-5.jpg',
+  '/hero-images/hero-6.jpg',
 ];
 
 export const Hero = () => {

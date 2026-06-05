@@ -42,7 +42,7 @@ export const CONSULTING_SERVICES: ServiceItem[] = [
       'We review diagrams, code, and documentation, develop high-level architecture, and recommend one of three migration methods and timeframes.',
     longDescription:
       'Our cloud migration practice reviews your current diagrams, codebase, and documentation to design a high-level architecture tailored to your goals. We recommend one of three migration approaches—rehost, refactor, or rearchitect—with clear timeframes and risk mitigation. We help you move to the cloud with minimal disruption and maximum benefit.',
-    imageUrl: '/images/service-details/cloud-migration.webp',
+    imageUrl: '/images/service-details/cloud-migration.jpg',
     size: 'small',
   },
   {
@@ -62,7 +62,7 @@ export const CONSULTING_SERVICES: ServiceItem[] = [
       'Do you have concerns about the quality of your Production Support? We can be reached through email. Because of our offshore presence, we can provide support 24 hours a day, 7 days a week.',
     longDescription:
       'Production support quality matters. With our global presence, we deliver 24/7 support so your systems and users are covered around the clock. We handle incidents, monitoring, and maintenance with clear SLAs and escalation paths. Reach us by email or phone whenever you need us.',
-    imageUrl: '/images/service-details/round-the-clock-support.webp',
+    imageUrl: '/images/consulting-services/tech-support.jpg',
     size: 'large',
   },
   {
@@ -72,7 +72,7 @@ export const CONSULTING_SERVICES: ServiceItem[] = [
       'We design, deploy, and manage robust infrastructure—from on-premise to hybrid and multi-cloud—so your applications run reliably and scale with demand.',
     longDescription:
       'From on-premise to hybrid and multi-cloud, we design, deploy, and manage infrastructure that is secure, scalable, and cost-effective. We help you choose the right mix of servers, networks, and cloud services so your applications run reliably and perform under load.',
-    imageUrl: '/images/service-details/infrastructure-servers.webp',
+    imageUrl: '/images/consulting-services/Infrastructure .avif',
     size: 'small',
   },
   {

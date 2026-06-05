@@ -64,8 +64,8 @@ export const Careers = ({ onNavigate }: CareersProps) => {
       >
          <div className="bg-white p-2 sm:p-4 shadow-2xl rotate-3">
             <img
-              src="/images/careers/professional-portrait.webp"
-              alt="Consultant"
+              src="/images/shared/team-collaboration.webp"
+              alt="Team collaboration"
               className="w-48 sm:w-64 h-60 sm:h-80 object-cover"
               referrerPolicy="no-referrer"
             />

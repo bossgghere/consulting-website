@@ -122,7 +122,7 @@ const TechServicesPage = () => {
             >
               <div className="aspect-square rounded-2xl sm:rounded-[3rem] overflow-hidden shadow-2xl border-4 sm:border-8 border-white/5">
                 <img 
-                  src="/images/tech-services/software-quality-assurance.webp" 
+                  src="/images/consulting-services/software-testing.jpg" 
                   alt="Quality Assurance" 
                   className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-700"
                   referrerPolicy="no-referrer"
@@ -146,7 +146,7 @@ const TechServicesPage = () => {
             >
               <div className="aspect-video rounded-2xl sm:rounded-[3rem] overflow-hidden shadow-2xl grayscale hover:grayscale-0 transition-all duration-1000">
                 <img 
-                  src="/images/tech-services/managed-it-infrastructure.webp" 
+                  src="/images/consulting-services/tech-support.jpg" 
                   alt="IT Support" 
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
