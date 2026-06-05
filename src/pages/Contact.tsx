@@ -102,28 +102,31 @@ const ContactPage = () => {
           >
             <div className="space-y-10 sm:space-y-16">
               {[
-                { icon: <Mail />, label: "Email Us", value: "contact@nexora.com", sub: "Typically responds within 24 hours." },
-                { icon: <Phone />, label: "Call Us", value: "(346) 278-6004", sub: "Mon-Fri, 9am - 6pm GMT" },
-                { icon: <MapPin />, label: "Visit Us", value: "London Office", sub: "20 Fenchurch St, London EC3M 3BY, UK" }
-              ].map((item, i) => (
-                <motion.div key={i} {...fadeUp(i * 0.08)} className="flex gap-4 sm:gap-8 group min-w-0">
-                  <div className="w-14 h-14 sm:w-16 sm:h-16 bg-bcg-forest text-bcg-neon rounded-2xl sm:rounded-3xl flex items-center justify-center shrink-0 group-hover:rotate-6 transition-transform shadow-lg">
-                    {React.cloneElement(item.icon as React.ReactElement, { className: "w-5 h-5 sm:w-6 sm:h-6" })}
-                  </div>
-                  <div className="min-w-0 flex-1">
-                    <h3 className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400 mb-2">{item.label}</h3>
-                    <p className="text-xl sm:text-2xl text-bcg-dark font-bold tracking-tight mb-1 break-words">{item.value}</p>
-                    <p className="text-gray-500 font-light text-sm sm:text-base break-words">{item.sub}</p>
-                  </div>
-                </motion.div>
-              ))}
+                { icon: Mail, label: "Email Us", value: "contact@nexora.com", sub: "Typically responds within 24 hours." },
+                { icon: Phone, label: "Call Us", value: "(346) 278-6004", sub: "Mon-Fri, 9am - 6pm GMT" },
+                { icon: MapPin, label: "Visit Us", value: "London Office", sub: "20 Fenchurch St, London EC3M 3BY, UK" }
+              ].map((item, i) => {
+                const Icon = item.icon;
+                return (
+                  <motion.div key={i} {...fadeUp(i * 0.08)} className="flex gap-4 sm:gap-8 group min-w-0">
+                    <div className="w-14 h-14 sm:w-16 sm:h-16 bg-bcg-forest text-bcg-neon rounded-2xl sm:rounded-3xl flex items-center justify-center shrink-0 group-hover:rotate-6 transition-transform shadow-lg">
+                      <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <h3 className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400 mb-2">{item.label}</h3>
+                      <p className="text-xl sm:text-2xl text-bcg-dark font-bold tracking-tight mb-1 break-words">{item.value}</p>
+                      <p className="text-gray-500 font-light text-sm sm:text-base break-words">{item.sub}</p>
+                    </div>
+                  </motion.div>
+                );
+              })}
             </div>
 
             <motion.div {...fadeUp(0.15)} className="mt-12 sm:mt-20 relative group">
               <div className="absolute inset-0 bg-bcg-forest/20 rounded-2xl sm:rounded-[3rem] blur-2xl group-hover:blur-3xl transition-all" />
               <div className="relative rounded-2xl sm:rounded-[3rem] overflow-hidden border-4 sm:border-8 border-white shadow-2xl grayscale hover:grayscale-0 transition-all duration-1000">
                 <img
-                  src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80"
+                  src="/images/shared/office-modern.webp"
                   alt="London Office"
                   className="w-full h-48 sm:h-64 object-cover"
                   referrerPolicy="no-referrer"

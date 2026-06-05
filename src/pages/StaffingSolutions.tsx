@@ -65,7 +65,7 @@ const StaffingSolutions = () => {
               className="rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl grayscale hover:grayscale-0 transition-all duration-700"
             >
               <img
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80"
+                src="/images/staffing-solutions/staffing-meeting.webp"
                 alt="Recruitment Team"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
@@ -76,7 +76,7 @@ const StaffingSolutions = () => {
               className="rounded-xl sm:rounded-2xl overflow-hidden shadow-xl grayscale hover:grayscale-0 transition-all duration-700"
             >
               <img
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80"
+                src="/images/shared/team-collaboration.webp"
                 alt="Professional Collaboration"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"

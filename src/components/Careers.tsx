@@ -13,7 +13,7 @@ export const Careers = ({ onNavigate }: CareersProps) => {
     <section className="relative min-h-[400px] sm:h-[500px] md:h-[600px] flex items-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1920&q=80"
+          src="/images/shared/team-meeting.webp"
           alt="Consulting background"
           className="w-full h-full object-cover"
           referrerPolicy="no-referrer"
@@ -64,7 +64,7 @@ export const Careers = ({ onNavigate }: CareersProps) => {
       >
          <div className="bg-white p-2 sm:p-4 shadow-2xl rotate-3">
             <img
-              src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80"
+              src="/images/careers/professional-portrait.webp"
               alt="Consultant"
               className="w-48 sm:w-64 h-60 sm:h-80 object-cover"
               referrerPolicy="no-referrer"

@@ -44,7 +44,7 @@ export const PressRelease = ({ onNavigate }: PressReleaseProps) => {
                transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
              >
                 <img
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&q=80"
+                  src="/images/shared/team-collaboration.webp"
                   alt="Staffing Solutions"
                   className="w-full h-auto rounded-lg shadow-lg"
                   referrerPolicy="no-referrer"

@@ -59,8 +59,8 @@ export const About = ({ onNavigate }: AboutProps) => {
             className="relative"
           >
             <img
-              src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80"
-              alt="Nexora"
+              src="/images/shared/office-modern.webp"
+              alt="Office"
               className="w-full h-full object-cover rounded-sm shadow-xl max-h-[400px] lg:max-h-none lg:aspect-auto"
               referrerPolicy="no-referrer"
             />

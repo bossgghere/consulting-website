@@ -79,7 +79,7 @@ export const Insights = () => {
                 transition={{ duration: 0.3 }}
               >
                 <img
-                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80"
+                  src="/images/shared/software-testing.webp"
                   alt="Software Testing"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
@@ -111,7 +111,7 @@ export const Insights = () => {
                 transition={{ duration: 0.3 }}
               >
                 <img
-                  src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&q=80"
+                  src="/images/insights/cybersecurity-data.webp"
                   alt="IT Support"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"

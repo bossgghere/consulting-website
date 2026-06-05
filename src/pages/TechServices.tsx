@@ -45,7 +45,7 @@ const TechServicesPage = () => {
               {/* Primary — engineering / collaboration */}
               <div className="aspect-[4/5] max-w-md mx-auto lg:max-w-none rounded-[2rem] sm:rounded-[3rem] lg:rounded-[4rem] overflow-hidden shadow-2xl grayscale hover:grayscale-0 transition-all duration-1000">
                 <img
-                  src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1000&q=80"
+                  src="/images/shared/application-development.webp"
                   alt="Engineers collaborating on technology solutions"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
@@ -54,7 +54,7 @@ const TechServicesPage = () => {
               {/* Secondary — data & infrastructure accent (stacked on mobile, overlap on sm+) */}
               <div className="mt-4 w-[72%] max-w-[240px] ml-auto sm:mt-0 sm:absolute sm:-bottom-6 sm:-right-2 sm:ml-0 md:-right-4 lg:right-0 sm:w-[45%] sm:max-w-[220px] aspect-[4/5] rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-[#fdfcfb] z-10">
                 <img
-                  src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80"
+                  src="/images/tech-services/tech-servers.webp"
                   alt="Server infrastructure and operations"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
@@ -122,7 +122,7 @@ const TechServicesPage = () => {
             >
               <div className="aspect-square rounded-2xl sm:rounded-[3rem] overflow-hidden shadow-2xl border-4 sm:border-8 border-white/5">
                 <img 
-                  src="https://picsum.photos/seed/software-quality-assurance-code/800/800" 
+                  src="/images/tech-services/software-quality-assurance.webp" 
                   alt="Quality Assurance" 
                   className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-700"
                   referrerPolicy="no-referrer"
@@ -146,7 +146,7 @@ const TechServicesPage = () => {
             >
               <div className="aspect-video rounded-2xl sm:rounded-[3rem] overflow-hidden shadow-2xl grayscale hover:grayscale-0 transition-all duration-1000">
                 <img 
-                  src="https://picsum.photos/seed/managed-it-infrastructure/1200/800" 
+                  src="/images/tech-services/managed-it-infrastructure.webp" 
                   alt="IT Support" 
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"

@@ -42,7 +42,7 @@ const AboutUs = () => {
           >
             <div className="aspect-[3/4] rounded-[3rem] sm:rounded-[5rem] overflow-hidden shadow-2xl grayscale hover:grayscale-0 transition-all duration-1000">
               <img
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80"
+                src="/images/shared/team-collaboration.webp"
                 alt="About Nexora"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
@@ -99,7 +99,7 @@ const AboutUs = () => {
           >
             <div className="aspect-square rounded-[3rem] sm:rounded-[4rem] overflow-hidden shadow-2xl grayscale hover:grayscale-0 transition-all duration-1000">
               <img
-                src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1000&q=80"
+                src="/images/shared/team-meeting.webp"
                 alt="Competitive Advantage"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
@@ -163,7 +163,7 @@ const AboutUs = () => {
               className="relative aspect-video rounded-2xl sm:rounded-[3rem] overflow-hidden border-8 border-white/5 shadow-2xl"
             >
               <img
-                src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1200&q=80"
+                src="/images/about/office-hallway.webp"
                 alt="Expertise"
                 className="object-cover w-full h-full opacity-80 hover:opacity-100 transition-opacity duration-1000"
                 referrerPolicy="no-referrer"

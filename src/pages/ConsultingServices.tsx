@@ -49,7 +49,7 @@ const ConsultingServices = ({ onNavigateToService }: ConsultingServicesProps) =>
             <div className="absolute inset-0 border border-bcg-forest/20 rounded-full animate-pulse hidden sm:block" />
             <div className="absolute inset-8 sm:inset-12 border border-bcg-forest/10 rounded-full hidden sm:block" />
             <img
-              src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1000&q=80"
+              src="/images/shared/team-meeting.webp"
               alt="Consulting strategy"
               className="w-full h-full object-cover rounded-full grayscale hover:grayscale-0 transition-all duration-1000 shadow-2xl"
               referrerPolicy="no-referrer"
@@ -226,7 +226,7 @@ const ConsultingServices = ({ onNavigateToService }: ConsultingServicesProps) =>
                 className="aspect-[4/5] rounded-2xl sm:rounded-[3rem] overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000 shadow-2xl"
               >
                 <img
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80"
+                  src="/images/shared/team-collaboration.webp"
                   alt="Our Process"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
