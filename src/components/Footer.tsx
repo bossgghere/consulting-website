@@ -9,25 +9,31 @@ export const Footer = () => {
     <footer className="bg-surface-alt pt-16 sm:pt-24 pb-8 sm:pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 sm:gap-16 mb-16 sm:mb-24">
-          <motion.div {...fadeUp(0)} className="lg:col-span-6">
-            <h2 className="text-2xl sm:text-3xl font-light text-text-primary leading-tight mb-6 sm:mb-8">
-              Unlocking the Potential of Those Who Advance the World
+          <motion.div {...fadeUp(0)} className="lg:col-span-6 flex items-center">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.5rem] font-light text-text-primary leading-snug sm:leading-tight tracking-tight">
+              Unlocking the <span className="text-accent italic font-serif">Potential</span> of Those Who Advance the World
             </h2>
           </motion.div>
 
           <motion.div {...fadeUp(0.16)} className="lg:col-span-6">
-            <h3 className="text-xl sm:text-2xl font-light text-text-primary mb-3 sm:mb-4">How can we assist you?</h3>
-            <p className="text-base sm:text-lg font-light leading-relaxed text-text-secondary mb-6 sm:mb-8 max-w-xl">
-              We value the opportunity to connect with you. Please submit your inquiries and feedback, and our
-              experienced professionals are ready to assist you.
-            </p>
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-accent text-text-primary font-bold uppercase tracking-widest text-xs sm:text-sm rounded-sm hover:brightness-110 transition-all group"
-            >
-              CONTACT US
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
+            <div className="space-y-4 sm:space-y-6 mb-8 sm:mb-10">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.25rem] font-light text-text-primary leading-snug sm:leading-tight tracking-tight">
+                How can we <span className="text-accent italic font-serif">assist you?</span>
+              </h3>
+              <p className="home-prose max-w-xl">
+                We value the opportunity to connect with you. Please submit your inquiries and feedback, and our
+                experienced professionals are ready to assist you.
+              </p>
+            </div>
+            <div>
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-accent text-text-primary font-bold uppercase tracking-widest text-xs sm:text-sm rounded-sm hover:brightness-110 transition-all group"
+              >
+                CONTACT US
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
           </motion.div>
         </div>
 

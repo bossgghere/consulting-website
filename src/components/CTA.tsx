@@ -14,9 +14,11 @@ export const CTA = () => {
           transition={{ duration: 0.6 }}
           className="flex flex-col md:flex-row justify-between items-center gap-6 sm:gap-8"
         >
-          <div className="text-center md:text-left">
-            <h2 className="text-3xl sm:text-4xl font-light text-text-on-dark mb-2 sm:mb-3">How We Work with Clients</h2>
-            <p className="home-prose-invert max-w-md">
+          <div className="text-center md:text-left space-y-4 sm:space-y-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.5rem] font-light text-text-on-dark leading-snug sm:leading-tight tracking-tight">
+              How We <span className="text-accent italic font-serif">Work with Clients</span>
+            </h2>
+            <p className="home-prose-invert max-w-lg">
               Explore how we partner with leaders in business and society.
             </p>
           </div>

@@ -25,25 +25,29 @@ export const Careers = () => {
           variants={staggerContainer}
           className="max-w-2xl text-white"
         >
-          <motion.span
-            variants={staggerItem}
-            className="text-[10px] font-black uppercase tracking-widest mb-4 block opacity-80"
-          >
-            CONSULTING
-          </motion.span>
-          <motion.h2 variants={staggerItem} className="text-3xl sm:text-4xl md:text-5xl font-light mb-3 sm:mb-5">
-            Bespoke consulting services
-          </motion.h2>
-          <motion.p variants={staggerItem} className="home-prose-invert mb-6 sm:mb-8 max-w-xl">
-            We are far beyond another staffing organization. Try our highly approachable and result-oriented consulting service at your Best!
-          </motion.p>
-          <Link
-            to="/consulting-services"
-            className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-accent text-text-primary font-bold uppercase tracking-widest text-xs sm:text-sm rounded-sm hover:brightness-110 transition-all group text-left max-w-full"
-          >
-            LEARN MORE ABOUT OUR SERVICES
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </Link>
+          <div className="space-y-4 sm:space-y-6 mb-8 sm:mb-10">
+            <motion.span
+              variants={staggerItem}
+              className="text-[10px] sm:text-xs font-black uppercase tracking-[0.3em] block text-accent"
+            >
+              CONSULTING
+            </motion.span>
+            <motion.h2 variants={staggerItem} className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-light leading-tight tracking-tight">
+              Bespoke <span className="text-accent italic font-serif">consulting services</span>
+            </motion.h2>
+            <motion.p variants={staggerItem} className="home-prose-invert max-w-xl">
+              We are far beyond another staffing organization. Try our highly approachable and result-oriented consulting service at your Best!
+            </motion.p>
+          </div>
+          <motion.div variants={staggerItem}>
+            <Link
+              to="/consulting-services"
+              className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-accent text-text-primary font-bold uppercase tracking-widest text-xs sm:text-sm rounded-sm hover:brightness-110 transition-all group text-left max-w-full"
+            >
+              LEARN MORE ABOUT OUR SERVICES
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </motion.div>
         </motion.div>
       </div>
 

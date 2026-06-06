@@ -122,20 +122,20 @@ export const Insights = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="order-1 lg:order-2"
+              className="order-1 lg:order-2 space-y-4 sm:space-y-6"
             >
-              <span className="text-[10px] font-black uppercase tracking-widest text-primary mb-3 block">MANAGED SERVICES</span>
-              <h2 className="text-3xl sm:text-4xl font-light text-text-primary mb-3">IT Support</h2>
-              <h3 className="text-base sm:text-lg font-light leading-relaxed text-text-secondary mb-5 sm:mb-6 italic">
-                Managed solutions for business resilience.
-              </h3>
-
-              <p className="text-base sm:text-lg font-light leading-relaxed text-text-secondary mb-8 max-w-xl">
+              <span className="text-[10px] sm:text-xs font-black uppercase tracking-[0.3em] text-accent block">
+                MANAGED SERVICES
+              </span>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.25rem] font-light text-text-primary leading-snug sm:leading-tight tracking-tight">
+                IT Support and <span className="text-accent italic font-serif">managed solutions</span> for business resilience.
+              </h2>
+              <p className="home-prose max-w-xl">
                 We handle security and monitoring so you can focus on growth. Access rapid technical support 
                 backed by proactive system maintenance and documentation.
               </p>
 
-              <div className="space-y-6">
+              <div className="space-y-6 pt-2">
                 <h4 className="text-sm font-bold uppercase tracking-widest text-text-primary">Our Solutions</h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {[
